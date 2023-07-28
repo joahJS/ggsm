@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "NS";
+  src: local("NS-Variable"), url("/public/fonts/NS-B.ttf") format("ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NS-Neo";
+  src: local("NanumSquareNeo Variable"), url("/public/fonts/NS-Variable.ttf") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  font-family: "NS-Neo";
+  font-size: 16px;
+}
+
+.common-inner {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+/* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+::-webkit-scrollbar {
+  background-color: transparent;
+  display: none;
+}
+
+[data-common-head-title] {
+  @apply font-bold w-full;
+  margin: 6rem 0 5rem;
+  font-size: var(--font32);
+  animation-name: move_down;
+  animation-duration: 1s;
+}
+
+@keyframes move_down {
+  from {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.common-button-style {
+  @apply cursor-pointer flex justify-center items-center absolute;
+  background-color: rgb(var(--white));
+  width: 3.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  filter: drop-shadow(0 6px 2px rgba(var(--black) 0.3));
+  margin-left: auto;
+  bottom: 1rem;
+  right: 1rem;
+}
+.common-button-style font-awesome-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.common-button-style:hover {
+  background-color: rgba(var(--main-clr), 1);
+}
+.common-button-style:hover svg {
+  color: rgba(var(--white), 1);
+}
+
+.ani_down {
+  animation-name: move_down;
+  animation-duration: 1s;
+}
+
+@keyframes move_down {
+  from {
+    opacity: 0;
+    transform: translateY(-3%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.common-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 767px) {
+  body [data-common-head-title] {
+    margin: 4rem 0 4rem;
+  }
+}
+/* _variable.scss */
+:root {
+  --fontBase: 1rem;
+  --fontM: 14px;
+  --font32: 2rem;
+  --fontMT: 1.25rem;
+  --fontST: 1.5rem;
+  --fontT: 2rem;
+  --black: 0, 0, 0,;
+  --white: 255, 255, 255;
+  --main-clr: 13, 26, 91;
+}
