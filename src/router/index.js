@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, useRoute } from 'vue-router'
 import Main from '@/pages/Main.vue'
 
 
@@ -80,6 +80,20 @@ const routes = [
     name: 'Contact',
     component: () => import( /* webpackChunkName: 'Contact' */ '@/pages/ContactUs.vue')
   },
+
+  //SCM
+  {  
+    path: '/login',
+    name: 'ScmLogin',
+    component: () => import( /* webpackChunkName: 'ScmLogin' */ '@/scm/ScmLogin.vue'),
+  },
+  {  
+    path: '/scm/:category',
+    name: 'Scm',
+    component: () => import( /* webpackChunkName: 'ScmMain' */ '@/scm/ScmMain.vue')
+  },
+
+  
 
 
 ]

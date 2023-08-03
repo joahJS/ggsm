@@ -17,17 +17,6 @@ export const usehfStore = defineStore('hdFt', () => {
         {
             navId: 0,
             linkTo: '',
-            title: 'UI테스트',
-            subT: 'UI Test',
-            childrens: [
-                { subTo: '/test', subTitle: 'Grid 테스트' },
-                { subTo: '/test02', subTitle: 'Grid 테스트 02' },
-            ]
-        },
-        
-        {
-            navId: 1,
-            linkTo: '',
             title: '회사소개',
             subT: 'COMPANY',
             childrens: [
@@ -38,7 +27,7 @@ export const usehfStore = defineStore('hdFt', () => {
             ]
         },
         {
-            navId: 2,
+            navId: 1,
             linkTo: '',
             title: '제품소개',
             subT: 'BUSINESS',
@@ -49,7 +38,7 @@ export const usehfStore = defineStore('hdFt', () => {
             ]
         },
         {
-            navId: 3,
+            navId: 2,
             linkTo: '',
             title: '고객지원',
             subT: 'CUSTOMER',
@@ -58,6 +47,15 @@ export const usehfStore = defineStore('hdFt', () => {
                 { subTo: '/data', subTitle: '자료실' },
                 { subTo: '/news', subTitle: '뉴스' },
                 { subTo: '/cont', subTitle: '문의하기' },
+            ]
+        },
+        {
+            navId: 3,
+            linkTo: '',
+            title: 'SCM',
+            subT: 'SCM SOLUTION',
+            childrens: [
+                { subTo: '/login', subTitle: 'SCM', category: 'loginMain' },
             ]
         },
     ])

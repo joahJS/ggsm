@@ -1,5 +1,5 @@
 <template>
-    <header :class="{'nav-back-transp': useRoute().path == '/' }">
+    <header :class="{'nav-back-transp': useRoute().path == '/'}">
         <div class="common-inner">
             <router-link to="/">
                 <img v-if="useRoute().path == '/'" data-main-logo src="/logo_w.png" alt="메인 로고 이미지">
@@ -82,6 +82,8 @@
 
     const hfStore = usehfStore()
     const { navGroup, navText } = storeToRefs(hfStore)
+    
+    const isLoginPg = ref(false)
 
     const navModalSt = ref(false)
     var mobVerIsShow = ref(false)
@@ -106,6 +108,7 @@
 
     })
 
+
 </script>
 
 <style lang="scss" scoped>
@@ -121,9 +124,14 @@
         }
     }
 
-    header.nav-back-transp, .nav-sub-mass.nav-back-transp {
-        background-color: rgba(var(--white), 0);
+    .nav-sub-mass.nav-back-transp {
+        background-color: rgba(var(--white), 0.05);
         color: rgb(var(--white));
+    }
+    header.nav-back-transp {
+        background-color: rgba(var(--white), 0.25);
+        color: rgb(var(--white));
+        
     }
 
     .nav-main-menu.nav-back-transp:hover {

@@ -1,7 +1,18 @@
 <template>
     <section id="subpHero">
         <h2 data-subp-header> </h2>
-            <div class="common-inner" data-subp-bottom v-for="item in navGroup">
+            <!-- scm용 -->
+            <div v-if="useRoute().name == 'Scm'" class="common-inner scm-inner" data-subp-bottom>
+                <ul data-subp-tap>
+                    <router-link :to="item.category" v-for="item in scmGroup" @click="isTap = item.category">
+                        <!-- <li v-if="item.find(e => e.category === getCate)" :class="{'recent-page':item.category == getCate}">{{ item.category }}</li> -->
+                        <li :class="{'recent-page':item.category == getCate}">{{ item.name }}</li>
+                    </router-link>
+                </ul>
+            </div>
+
+            <!-- scm 외 메뉴들용 -->
+            <div v-else="" class="common-inner" data-subp-bottom v-for="item in navGroup">
                 
                     <ul v-if="item.childrens.find(e => e.subTo === '/prod')" data-subp-tap>
                         <router-link v-for="subItem in item.childrens" :to="subItem.category">
@@ -23,18 +34,18 @@
     import { useRoute } from 'vue-router'
     //store에서 영역별 데이터 import
     import { usehfStore } from '@/store/hfStore'
+    import { useScmStore } from '@/store/scmStore'
     import { storeToRefs } from 'pinia';
 
     const hfStore = usehfStore()
+    const scmStore = useScmStore()
+
+    const { scmGroup, isTap } = storeToRefs(scmStore)
     const { navGroup } = storeToRefs(hfStore)
 
     const getParams = useRoute();
     const getCate = getParams.params.category
-
     
-    
-    // console.log(useRoute().path)
-
 </script>
 
 <style lang="scss" scoped>
@@ -63,6 +74,10 @@
         @apply w-full;
 
         max-width: 40rem;
+
+        &.scm-inner {
+            max-width: 70rem;
+        }
     }
 
     [data-subp-tap] {

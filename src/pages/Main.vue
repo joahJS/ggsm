@@ -5,7 +5,7 @@
                 <p>Lorem ipsum, <span class="m-block">dolor sit amet consectetur adipisicing elit.</span></p>    
             </div>
             <div data-main-catch-bottom>    
-                <h1> Ipsam atque delectus sint. Corrupti unde, aspernatur ducimus quod, tempore debitis, maiores excepturi dolore tenetur totam ex quia reprehenderit officia magni? Nemo.</h1>
+                <h1> Ipsam atque delectus sint. Corrupti unde, aspernatur ducimus quod</h1>
                 <div></div>
             </div>
             
@@ -29,7 +29,7 @@
         left:0;
         width: 100vw;
         height: 100vh;
-        background-image: url('/img/main_back.jpg');
+        background-image: url('/img/login_back.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

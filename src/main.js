@@ -24,11 +24,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* 원하는 아이콘을 개별적으로 import */
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark, faCircleDown, faShareFromSquare } from '@fortawesome/free-regular-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 
 /* 위에서 import한 아이콘들을 Core library에 등록 */
-library.add(faCircleXmark, faCircleDown, faShareFromSquare, faLocationDot)
+library.add(faCircleXmark, faCircleDown, faShareFromSquare, faLocationDot, faUser)
 
 /* font awesome 컴포넌트를 전역으로 등록 */
 app.component('font-awesome-icon', FontAwesomeIcon)
