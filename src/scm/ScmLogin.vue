@@ -8,7 +8,7 @@
                 <input type="text" id="loginId" placeholder="ID">
             </div>
             <div data-login-input-box>
-                <font-awesome-icon icon="fa-regular fa-circle-down" />
+                <font-awesome-icon icon="fa-solid fa-lock" />
                 <input type="text" id="loginPw" placeholder="Password">
             </div>
             <router-link :to="{name: 'Scm', params: {category: 'scmNoti'}}" data-login-button-container>
@@ -120,11 +120,11 @@
     [data-login-button] {
         margin-top: 6rem;
         padding: 1.25rem 1rem;
-        background-color: rgba(var(--main-clr), 1);
+        background-color: rgba(var(--yellow), 1);
         border-radius: 3rem;
         font-size: 1.25rem;
         transition: all .35s;
-        filter: drop-shadow(0 0 4px rgba(var(--main-clr), 0.5));
+        filter: drop-shadow(0 0 4px rgba(var(--black) 0.5));
         font-weight: 900;
         letter-spacing: 2px;
 

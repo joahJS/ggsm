@@ -11,9 +11,11 @@
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@headlessui/vue": "^1.7.14",
+    "@popperjs/core": "^2.11.8",
     "pinia": "^2.0.35",
     "swiper": "^9.2.4",
     "tui-grid": "^4.21.12",
+    "v-calendar": "^3.0.3",
     "vue": "^3.2.47",
     "vue-global-api": "^0.4.1",
     "vue-remix-icons": "^3.0.0",

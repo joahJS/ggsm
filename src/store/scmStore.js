@@ -35,8 +35,6 @@ export const useScmStore = defineStore('scm', () => {
         }
     ])
 
-    const isTap = ref('scmNoti')
-
-    return { scmGroup, isTap }
+    return { scmGroup }
 
 })

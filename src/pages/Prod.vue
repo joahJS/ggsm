@@ -51,7 +51,7 @@
     #prodTexts {
         @apply grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
     }
 

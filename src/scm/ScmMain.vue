@@ -2,32 +2,28 @@
     <SubpHero />
     <section class="common-inner">
 
-        <div v-show="isTap == 'bill'">
+        <div v-show="getCate == 'bill'">
             <ScmBill />
         </div>
-        <div v-show="isTap == 'wait'">
+        <div v-show="getCate == 'wait'">
             <ScmWait />
         </div>
-        <div v-show="isTap == 'stockCs'">
+        <div v-show="getCate == 'stockCs'">
             <ScmStockCs />
         </div>
-        <div v-show="isTap == 'shipCs'">
+        <div v-show="getCate == 'shipCs'">
             <ScmShipCs />
         </div>
-        <div v-show="isTap == 'invoCs'">
+        <div v-show="getCate == 'invoCs'">
             <ScmInvoCs />
         </div>
-        <div v-show="isTap == 'ledger'">
+        <div v-show="getCate == 'ledger'">
             <ScmLedger />
         </div>
 
-
-        
-
-        <div v-show="isTap == 'scmNoti'">
+        <div v-show="getCate == 'scmNoti'">
             <ScmNotice />
-        </div>
-        
+        </div>        
         
         <!-- <h1 data-common-head-title>SCM</h1>
         <div id="scmTexts" class="ani_down">
@@ -52,11 +48,17 @@
     import { storeToRefs } from 'pinia';
     import { RiWechatChannelsFill } from 'vue-remix-icons';
 
+    import { useRoute } from 'vue-router'
+
+    const getCate = useRoute().params.category
+
     const scmStore = useScmStore()
-    const { scmGroup, isTap } = storeToRefs(scmStore)   
+    const { scmGroup } = storeToRefs(scmStore)   
     
 </script>
 
 <style lang="scss" scoped>
-    
+    [data-common-head-title] {
+        margin: 6rem 0 3rem;
+    }
 </style>

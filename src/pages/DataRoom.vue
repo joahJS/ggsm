@@ -48,8 +48,9 @@
 
         padding: 1.8rem;
         gap: 2rem;
-        background-color: rgba(var(--black) .075);
-        border-radius: .5rem;
+        background-color: rgba(var(--black) 0.045);
+        border-radius: 0.25rem;
+        // border: 1px solid rgba(var(--black) .1);
 
         img {
             @apply w-full h-full;

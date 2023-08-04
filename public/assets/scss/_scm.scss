@@ -1,0 +1,91 @@
+.common-filter-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.each-filter {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+
+    input, select {
+        // border: 1px solid #d8d8d8;
+        // background-color: rgba(var(--black) .075);
+        border-bottom: 1px solid #333;
+        border-radius: .5rem .5rem 0 0;
+        padding: .35rem .5rem;
+        height: 2.25rem;
+        outline: 0;
+    }
+
+    input[type="date"] {
+        width: 100%;
+    }
+
+    &.filter-type-select {
+        width: 20%;
+    }
+}
+
+.filter-type-dates {
+    display: flex;
+    gap: 1rem;
+
+    > div {
+        gap: .25rem;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    input:last-child {
+        &:before {
+            content: '~';
+            display: block;
+            margin: 0 .25rem;
+        }
+    }
+}
+
+.ft-header {
+    margin-bottom: .5rem;
+    opacity: .5;
+}
+
+.common-filter-button {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem .5rem 1rem;
+    border: 1px solid rgba(var(--black) 1);
+    border-radius: 2rem;
+    height: 2.25rem;
+    font-size: .85rem;
+    font-weight: 100;
+
+    svg {
+        color: rgba(var(--black) 0.25);
+        font-size: .85rem;
+        margin-right: .75rem;
+    }
+}
+
+[data-date-container] {
+    position: relative;
+
+    input {
+        position: relative;
+        z-index: 1;
+    }
+
+    svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1rem;
+        z-index: 2;
+        color: rgba(var(--black) 0.25);
+
+    }
+}

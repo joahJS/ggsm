@@ -8,8 +8,8 @@ export const usehfStore = defineStore('hdFt', () => {
 
     const navText = ref([
         {
-            navSubTexts: '여기는',
-            navTexts: '테스트용 페이지입니다.',
+            navSubTexts: 'SUBTITLE',
+            navTexts: '금강에스엠 DEFAULT',
         }
     ])
 

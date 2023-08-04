@@ -52,9 +52,9 @@
     #subpHero {
         @apply w-full relative flex flex-col justify-end items-center overflow-hidden;
 
-        margin-top: 6.25rem;
-        height: 31.25rem;
-        background-image: url(/subp_back.jpg);
+        // margin-top: 6.25rem;
+        height: 20rem;
+        background-image: url(/img/login_back.jpg);
         background-position: center center;
         background-size: cover;
 
@@ -94,7 +94,7 @@
 
             background-color: rgba(var(--white), .8);
             border-radius: .25rem .25rem 0 0;
-            padding: 1.2rem 0;
+            padding: .75rem 0;
 
             &.recent-page {
                 background-color: rgba(var(--white), 1);
