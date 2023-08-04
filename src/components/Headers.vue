@@ -116,7 +116,7 @@
         @apply fixed top-0 w-full flex;
 
         height: 6.25rem;
-        background-color: rgba(var(--white), 1);
+        background-color: rgba(var(--white), .5);
         z-index: 9;
 
         > .common-inner {
@@ -217,7 +217,7 @@
         right: 50%;
         transform: translateX(50%);
         z-index: 99;
-        background-color: rgba(var(--white), .8);
+        background-color: rgba(var(--white), .5);
         padding-top: 1rem;
         transition: all 1s;
     }

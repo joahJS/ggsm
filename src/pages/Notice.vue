@@ -75,9 +75,10 @@
     [data-notice-item] {
         @apply flex flex-col cursor-pointer;
 
-        padding: 1rem 2rem;
-        background-color: rgba(var(--black) .075);
-        border-radius: .5rem;
+        padding: 1rem 2rem 2rem;
+        // background-color: rgba(var(--black) .045);
+        border-radius: .25rem;
+        border: 1px solid rgba(var(--black) 1);
 
         & * {
             user-select: none;
@@ -104,7 +105,7 @@
 
         h2 {
             font-size: 2rem;
-            font-weight: normal;
+            font-weight: 900;
             text-align: right;
             line-height: 1.35;
         }
@@ -117,7 +118,7 @@
 
         h3 {
             font-weight: bold;
-            margin-top: 2rem;
+            margin-top: 1rem;
             font-size: var(--fontMT);
         }
 

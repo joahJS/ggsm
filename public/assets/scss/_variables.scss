@@ -5,6 +5,7 @@
     //size
     --fontBase: 1rem;
     --fontM: 14px;
+    --font13: 13px;
     --font32: 2rem;
 
     //게시판 500px 이하 사이즈 타이틀 
@@ -22,6 +23,8 @@
     --white: 255, 255, 255;
     --main-clr: 13, 26, 91;
     $main-clr: hsl(230, 75%, 20%);
+    --yellow: 253, 183, 0;
+    --darkblue: 5, 25, 55;
 
     //screen size
     $breakpoint-mobile: 768px;
