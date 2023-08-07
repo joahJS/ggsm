@@ -84,6 +84,7 @@
         @apply flex;
 
         gap: .25rem;
+        align-items: flex-end;
 
         > a {
             @apply w-full;
