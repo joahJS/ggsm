@@ -253,4 +253,21 @@
 [data-scm-table-header] > li {
   display: flex;
   justify-content: center;
+}
+
+.scm-pager-list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+.scm-pager-list li {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+.scm-pager-list li .pager-recent-page {
+  background-color: rgba(var(--black) 0.1);
+}
+.scm-pager-list li:hover {
+  background-color: rgba(var(--black) 0.1);
 }/*# sourceMappingURL=style.css.map */
