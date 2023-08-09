@@ -27,7 +27,7 @@
         <div class="scm-common-pager">
             <ul class="scm-pager-list">
                 <li @click="recentPage = recentPage > 1 ? recentPage - 1 : recentPage = 0"><font-awesome-icon icon="fa-solid fa-angle-left" /></li>
-                <li v-for="pageNumber in totalPages" @click="recentPage = pageNumber-1" :class="{ pagerRecentPage: pageNumber == recentPage }">
+                <li v-for="pageNumber in totalPages" @click="recentPage = pageNumber-1" :class="{ 'pager-recent-page': pageNumber == recentPage }">
                     {{ pageNumber }}
                 </li>
                 <li @click="recentPage = recentPage < totalPageNum - 1 ? recentPage + 1 : recentPage = totalPageNum - 1"><font-awesome-icon icon="fa-solid fa-angle-right" /></li>
