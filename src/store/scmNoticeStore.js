@@ -68,6 +68,27 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
             FILE_YN: 'Y', //파일
             FILE_URL: '',
         },
+        {
+            NO: '10',
+            TITLE: '공지사항 테스트 06', //제목
+            DATE: '2023.08.11', //일자
+            FILE_YN: 'Y', //파일
+            FILE_URL: '',
+        },
+        {
+            NO: '11',
+            TITLE: '공지사항 테스트 06', //제목
+            DATE: '2023.08.11', //일자
+            FILE_YN: 'Y', //파일
+            FILE_URL: '',
+        },
+        {
+            NO: '12',
+            TITLE: '공지사항 테스트 06', //제목
+            DATE: '2023.08.11', //일자
+            FILE_YN: 'Y', //파일
+            FILE_URL: '',
+        },
         
     ])
 

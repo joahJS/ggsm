@@ -157,3 +157,24 @@
         justify-content: center;
     }
 }
+
+//pager
+.scm-pager-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+
+    li {
+        cursor: pointer;
+        padding: .25rem .5rem;
+
+        .pager-recent-page {
+            background-color: rgba(var(--black) .1);
+        }
+        
+        &:hover {
+            background-color: rgba(var(--black) .1);
+        }
+    }
+}
