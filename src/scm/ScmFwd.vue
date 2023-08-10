@@ -54,8 +54,8 @@
                     <li>확인유무</li>
                 </ul>
             </div>
-            <div v-for="item in copyOfData" class="scm-table-body">
-                <ul class="scm-table-line">
+            <div class="scm-table-body">
+                <ul v-for="item in copyOfData" class="scm-table-line">
                     <li><input type="checkbox" v-model="item.CHK"></li>
                     <li>{{ item.CATE }}</li>
                     <li>{{ item.WK_INFO }}</li>
@@ -131,4 +131,5 @@
     .scm-table-line {
         grid-template-columns: .3fr repeat(8, .6fr) 1.5fr 1.5fr .6fr .6fr;
     }
+
 </style>

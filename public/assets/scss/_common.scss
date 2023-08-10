@@ -5,8 +5,8 @@
 @font-face {
     font-family: 'NS';
     src:
-        local('NS-Variable'),
-        url('/public/fonts/NS-B.ttf') format('ttf');
+        local('PretendardVariable'),
+        url('/public/fonts/PretendardVariable.woff2') format('woff2-variations');
 	font-weight: 100 900;
     font-style: normal;
     font-display: swap; // 폰트 다운로드 전 텍스트 미리보기
@@ -115,6 +115,7 @@
         transform: translateY(0);
     }
 }
+
 
 
 
