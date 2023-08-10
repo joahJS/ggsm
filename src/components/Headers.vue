@@ -305,7 +305,7 @@
             color: rgb(var(--white));
 
             & + div {
-                margin-top: 3.75rem;
+                margin-top: 2rem;
             }
         }
 
@@ -333,7 +333,7 @@
         @apply flex flex-col;
 
         top: 3rem;
-        gap: 1.5rem;
+        gap: 1rem;
         margin-top: 1.5rem;
 
         li {

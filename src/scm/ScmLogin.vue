@@ -120,17 +120,18 @@
     [data-login-button] {
         margin-top: 6rem;
         padding: 1.25rem 1rem;
-        background-color: rgba(var(--yellow), 1);
+        background-color: rgba(var(--main-clr), 1);
         border-radius: 3rem;
         font-size: 1.25rem;
         transition: all .35s;
-        filter: drop-shadow(0 0 4px rgba(var(--black) 0.5));
+        filter: drop-shadow(0 0 4px rgba(var(--main-clr) 0.5));
         font-weight: 900;
         letter-spacing: 2px;
 
         &:hover {
-            background-color: rgb(var(--white));
-            color: rgb(var(--main-clr));
+            // color: rgb(var(--main-clr));
+            background-color: rgb(var(--sub-clr));
+            
         }
     }
 

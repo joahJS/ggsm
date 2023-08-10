@@ -2,28 +2,38 @@
     <h1 data-common-head-title>공지사항</h1>
     <div id="scmTexts" class="ani_down">
         <div class="scm-common-table">
-            <div class="scm-table-header">
+            <!-- <div class="scm-table-header">
                 <ul class="scm-table-line" data-scm-table-header>
                     <li>No</li>
                     <li>제목</li>
                     <li>작성일</li>
                     <li>파일</li>
                 </ul>
-            </div>
-            <div v-for="item in dataPerPage[recentPage]" class="scm-table-body">
-                <ul class="scm-table-line">
-                    <li>{{ item.NO }}</li>
-                    <li>{{ item.TITLE }}</li>
-                    <li>{{ item.DATE }}</li>
-                    <li v-if="item.FILE_YN == 'Y'">
-                        <a :href="item.FILE_URL">
-                            <font-awesome-icon icon="fa-regular fa-file" />
-                        </a>
-                    </li>
-                    <li v-else>-</li>
-                </ul>
+            </div> -->
+            <div class="board-table-body">
+                <router-link v-for="item in dataPerPage[recentPage]" :to="{ name: 'ScmDetail', params: { id: item.NO } }">
+                    <ul class="scm-table-line">
+                        <li data-list-date>
+                            <p data-list-date-year>{{ item.DATE.substr(0, 4) }}</p>
+                            <p data-list-date-day>{{ item.DATE.substr(5,5) }}</p>
+                        </li>
+                        <!-- <li>{{ item.NO }}</li> -->
+                        <li data-list-texts>
+                            <p data-list-texts-title>{{ item.TITLE }}</p>
+                            <div data-list-texts-body v-html="item.TEXTS"></div>
+                        </li>
+                        
+                        <li data-list-file-yn v-if="item.FILE_YN == 'Y'">
+                            <a :href="item.FILE_URL">
+                                <font-awesome-icon icon="fa-regular fa-file" />
+                            </a>
+                        </li>
+                        <li v-else>-</li>
+                    </ul>
+                </router-link>
             </div>
         </div>
+        <!-- common pager -->
         <div class="scm-common-pager">
             <ul class="scm-pager-list">
                 <li @click="recentPage = recentPage > 1 ? recentPage - 1 : recentPage = 0"><font-awesome-icon icon="fa-solid fa-angle-left" /></li>
@@ -46,6 +56,8 @@
 
     const scmNoticeStore = useScmNoticeStore()
     const { scmNoticeGroup } = storeToRefs(scmNoticeStore)
+
+    //Front에서 사용하기위하여 가져온 데이터를 별도의 배열로 복사
     const copyOfData = [...scmNoticeGroup.value]
     
     function chkChk() {
@@ -88,11 +100,15 @@
 <style lang="scss" scoped>
     // table
 
-    .scm-table-line {
-        grid-template-columns: 3rem 1fr .2fr 3rem;
+    .board-table-body .scm-table-line {
+        grid-template-columns: 10rem 1fr .2fr 3rem;
+
+        &:hover {
+            background-color: rgba(var(--main-black), .05);
+        }
     }
 
-    .scm-table-body li:nth-child(2) {
+    .board-table-body li:nth-child(2) {
         text-align: start;
         padding: 0 1rem;
     }

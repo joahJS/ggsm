@@ -4,7 +4,7 @@
 @tailwind utilities;
 @font-face {
   font-family: "NS";
-  src: local("NS-Variable"), url("/public/fonts/NS-B.ttf") format("ttf");
+  src: local("PretendardVariable"), url("/public/fonts/PretendardVariable.woff2") format("woff2-variations");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -113,8 +113,10 @@
   --fontT: 2rem;
   --black: 0, 0, 0,;
   --white: 255, 255, 255;
-  --main-clr: 13, 26, 91;
-  --yellow: 253, 183, 0;
+  --main-clr: 46, 63, 88;
+  --sub-clr: 35, 47, 66;
+  --main-black: 77, 77, 77;
+  --yellow: 255, 210, 100;
   --darkblue: 5, 25, 55;
 }
 
@@ -168,7 +170,6 @@
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem 0.5rem 1rem;
-  border: 1px solid rgba(var(--black) 1);
   border-radius: 2rem;
   height: 2.25rem;
   font-size: 0.85rem;
@@ -201,16 +202,30 @@
 }
 
 #scmSearchBtn {
-  background-color: rgba(var(--darkblue), 1);
+  background-color: rgba(var(--black) 1);
   color: rgb(var(--white));
   box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.25);
+}
+#scmSearchBtn:hover {
+  opacity: 0.75;
 }
 #scmSearchBtn svg {
   color: rgb(var(--white));
 }
 
+.board-table-body {
+  border-top: 3px solid rgb(var(--main-black), 1);
+}
+
 .scm-common-table {
   font-size: var(--fontM);
+}
+
+.scm-table-body {
+  border-top: 1px solid rgba(var(--main-black) 0.5);
+}
+.scm-table-body .scm-table-line:hover {
+  background-color: rgba(var(--black) 0.05);
 }
 
 .scm-table-line {
@@ -220,9 +235,9 @@
      -moz-user-select: none;
           user-select: none;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
-  padding: 0.25rem 0;
+  padding: 1rem 0;
 }
 .scm-table-line li {
   text-overflow: ellipsis;
@@ -232,19 +247,13 @@
   word-break: keep-all;
   white-space: nowrap;
 }
-.scm-table-line:hover {
-  background-color: rgba(var(--black) 0.05);
-}
 .scm-table-line[data-scm-table-header] {
   border-bottom: 0;
 }
-.scm-table-line[data-scm-table-header]:hover {
-  background-color: rgba(var(--black) 0.1);
-}
 
 [data-scm-table-header] {
-  background-color: rgba(var(--black) 0.1);
-  font-weight: 700;
+  background-color: rgb(var(--yellow));
+  font-weight: 600;
   padding: 0.5rem 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -254,12 +263,15 @@
   display: flex;
   justify-content: center;
 }
+[data-scm-table-header] .scm-table-line:hover {
+  background-color: rgb(var(--yellow));
+}
 
 .scm-pager-list {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .scm-pager-list li {
   cursor: pointer;
@@ -270,4 +282,101 @@
 }
 .scm-pager-list li:hover {
   background-color: rgba(var(--black) 0.1);
+}
+
+.board-detail-inner {
+  max-width: 860px;
+}
+
+.board-title-line {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.board-texts-body {
+  border-top: 1px solid rgba(var(--main-black), 0.15);
+  border-bottom: 1px solid rgba(var(--main-black), 0.15);
+  padding: 1rem 0;
+}
+.board-texts-body p {
+  line-height: 1.75;
+}
+
+.common-board-button-line {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.common-board-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 2rem;
+  min-width: 5rem;
+  height: 2.25rem;
+}
+.common-board-button:hover {
+  opacity: 0.75;
+}
+.common-board-button svg {
+  color: rgb(var(--white));
+  margin-right: 0.75rem;
+}
+
+[data-board-detail-title] {
+  font-size: var(--fontST);
+  font-weight: 600;
+}
+
+[data-board-detail-title-bottom] {
+  display: flex;
+  gap: 1rem;
+  color: rgba(var(--main-black), 0.5);
+}
+
+[data-list-texts] {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-list-texts-title] {
+  font-size: var(--fontST);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+}
+
+[data-list-texts-body] {
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  height: 2.5rem;
+}
+
+[data-list-date] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+[data-list-date] [data-list-date-year] {
+  opacity: 0.5;
+}
+[data-list-date] [data-list-date-day] {
+  font-size: var(--fontT);
+}
+
+[data-list-file-yn] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
