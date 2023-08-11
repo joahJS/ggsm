@@ -53,13 +53,13 @@
 
     [data-grt-title] {
         
-        font-weight: 900;
-        color: rgba(var(--main-clr),1);
+        font-weight: 700;
+        color: rgba(var(--deepblue), 1);
         font-size:2rem;
     }
 
     [data-grt-subt] {
-        color: rgba(var(--main-clr),1);
+        color: rgba(var(--deepblue), .75);
         font-size:1.25rem;
         margin-top: 1rem;
     }
@@ -91,7 +91,7 @@
             &:last-child {
                 font-size: 2rem;
                 margin-right: 2rem;
-                font-weight: bold;
+                font-weight: 700;
             }
         }
 

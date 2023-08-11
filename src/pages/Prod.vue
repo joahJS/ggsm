@@ -64,9 +64,14 @@
             @apply flex;
 
             user-select: none;
+            margin-top: .75rem;
+        }
 
-            h2 {
+        &:hover {
 
+            [data-item-img] {
+                // border: 1px solid rgba(var(--deepblue), 1); 
+                filter: drop-shadow(0 0 10px rgba(var(--black) .15));
             }
         }
 

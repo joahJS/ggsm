@@ -34,7 +34,8 @@
 }
 
 [data-common-head-title] {
-  @apply font-bold w-full;
+  @apply w-full;
+  font-weight: 900;
   margin: 3rem 0 4rem;
   font-size: var(--font32);
   animation-name: move_down;
@@ -62,13 +63,16 @@
   bottom: 1rem;
   right: 1rem;
 }
+.common-button-style svg {
+  color: rgba(var(--deepblue), 1);
+}
 .common-button-style font-awesome-icon {
   width: 1rem;
   height: 1rem;
 }
 
 .common-button-style:hover {
-  background-color: rgba(var(--main-clr), 1);
+  background-color: rgba(var(--deepblue), 1);
 }
 .common-button-style:hover svg {
   color: rgba(var(--white), 1);
@@ -117,26 +121,59 @@
   --sub-clr: 35, 47, 66;
   --main-black: 77, 77, 77;
   --yellow: 255, 210, 100;
+  --deepblue: 16, 87, 182;
+  --scm-body: 244, 246, 250;
   --darkblue: 5, 25, 55;
 }
 
-.common-filter-container {
+.scm-common-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.common-filter-body {
   display: flex;
-  gap: 2rem;
+  width: 100%;
+  gap: 3rem;
+  justify-content: space-between;
+  background-color: rgba(var(--white), 1);
+  padding: 1rem;
+  filter: drop-shadow(0 0 8px rgba(var(--deepblue), 0.1));
+  border-radius: 0.5rem;
+}
+
+.common-filter-container {
+  display: grid;
+  gap: 0.75rem 2rem;
+}
+
+.filter-button-container {
+  display: flex;
+  gap: 1rem;
   align-items: flex-end;
 }
 
 .each-filter {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(var(--main-black), 0.15);
 }
 .each-filter input, .each-filter select {
-  border-bottom: 1px solid #333;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0.5rem;
   padding: 0.35rem 0.5rem;
   height: 2.25rem;
   outline: 0;
+}
+.each-filter input {
+  width: 100%;
+  background-color: rgba(var(--deepblue), 0.075);
+  margin-bottom: 0.25rem;
+}
+.each-filter input[type=checkbox] {
+  width: 1rem;
+  cursor: pointer;
 }
 .each-filter input[type=date] {
   width: 100%;
@@ -152,9 +189,6 @@
 .filter-type-dates > div {
   gap: 0.25rem;
 }
-.filter-type-dates input {
-  width: 100%;
-}
 .filter-type-dates input:last-child:before {
   content: "~";
   display: block;
@@ -162,8 +196,15 @@
 }
 
 .ft-header {
-  margin-bottom: 0.5rem;
-  opacity: 0.5;
+  opacity: 0.75;
+  width: 5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgba(var(--deepblue), 1);
 }
 
 .common-filter-button {
@@ -174,11 +215,29 @@
   height: 2.25rem;
   font-size: 0.85rem;
   font-weight: 100;
+  background-color: rgba(var(--deepblue), 1);
+  color: rgb(var(--white));
+}
+.common-filter-button:hover {
+  background-color: rgba(var(--main-clr), 1);
 }
 .common-filter-button svg {
-  color: rgba(var(--black) 0.25);
+  color: rgb(var(--white));
   font-size: 0.85rem;
   margin-right: 0.75rem;
+}
+
+.filter-type-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.filter-type-checkbox label {
+  display: flex;
+  align-items: center;
+}
+.filter-type-checkbox label input[type=checkbox] {
+  margin: 0 0.5rem 0 0;
 }
 
 [data-date-container] {
@@ -199,26 +258,36 @@
 
 .scm-common-body {
   margin-top: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  filter: drop-shadow(0 0 8px rgba(var(--deepblue), 0.1));
+}
+.scm-common-body .scm-common-table {
+  filter: none;
 }
 
 #scmSearchBtn {
-  background-color: rgba(var(--black) 1);
+  background-color: rgba(var(--deepblue), 1);
   color: rgb(var(--white));
-  box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.25);
 }
 #scmSearchBtn:hover {
-  opacity: 0.75;
+  background-color: rgba(var(--main-clr), 1);
 }
 #scmSearchBtn svg {
   color: rgb(var(--white));
 }
 
 .board-table-body {
-  border-top: 3px solid rgb(var(--main-black), 1);
+  border-top: 3px solid rgb(var(--deepblue), 1);
+  background-color: rgba(var(--white), 1);
 }
 
 .scm-common-table {
   font-size: var(--fontM);
+  background-color: rgba(var(--white), 1);
+  filter: drop-shadow(0 0 8px rgba(var(--deepblue), 0.1));
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .scm-table-body {
@@ -237,7 +306,7 @@
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 .scm-table-line li {
   text-overflow: ellipsis;
@@ -252,8 +321,9 @@
 }
 
 [data-scm-table-header] {
-  background-color: rgb(var(--yellow));
-  font-weight: 600;
+  background-color: rgb(var(--deepblue));
+  color: rgb(var(--white));
+  font-weight: 300;
   padding: 0.5rem 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -298,6 +368,10 @@
   border-top: 1px solid rgba(var(--main-black), 0.15);
   border-bottom: 1px solid rgba(var(--main-black), 0.15);
   padding: 1rem 0;
+}
+.board-texts-body img {
+  margin-bottom: 1rem;
+  width: 100%;
 }
 .board-texts-body p {
   line-height: 1.75;

@@ -92,7 +92,9 @@
 
     //item hover
     [data-news-item]:hover {
-        background-color: rgba(var(--main-clr), 1);
+        background-color: rgba(var(--deepblue), 1);
+        border: 1px solid rgba(var(--deepblue), 1);
+        filter: drop-shadow(0 0 10px rgba(var(--deepblue), .5));
 
         hgroup {
             h2 {

@@ -50,7 +50,7 @@
             background-image: url('/img/login_back.jpg');
             background-size: cover;
             filter: grayscale(1);
-            opacity: .7;
+            opacity: .5;
         }
     }
 
@@ -80,7 +80,7 @@
             }
 
             span {
-                color: rgba(var(--main-clr), 1);
+                color: rgba(var(--deepblue), 1);
             }
         }
 
@@ -90,11 +90,11 @@
             background-color: rgba(var(--white), .7);
             padding: 1rem 1rem 1rem 3.5rem;
             color: rgba(var(--black) 1);
-            filter: drop-shadow(0 0 4px rgba(var(--main-clr), 0.25));
+            filter: drop-shadow(0 0 8px rgba(var(--main-clr), 0.5));
             cursor: pointer;
 
             &:focus {
-                outline: 5px solid rgba(var(--main-clr), 1);
+                outline: 4px solid rgba(var(--deepblue), 1);
             }
         }
     }
@@ -120,7 +120,7 @@
     [data-login-button] {
         margin-top: 6rem;
         padding: 1.25rem 1rem;
-        background-color: rgba(var(--main-clr), 1);
+        background-color: rgba(var(--deepblue), 1);
         border-radius: 3rem;
         font-size: 1.25rem;
         transition: all .35s;

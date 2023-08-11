@@ -1,40 +1,82 @@
 <template>
-    <h1 data-common-head-title>출고관리</h1>
-    <div class="common-filter-container">
-        <div class="each-filter filter-type-select">
-            <h2 class="ft-header">구분</h2>
-            <select data-Fwd-category>
-                <option>전체</option>
-                <option>연계</option>
-                <option>일반</option>
-            </select>
-        </div>
-        <div class="each-filter">
-            <h2 class="ft-header">날짜</h2>
-            <div class="filter-type-dates">
-                <VDatePicker v-model="range" is-range>
-                    <template #default="{ inputValue, inputEvents }">
-                        <div class="flex justify-center items-center">
-                            <article data-date-container>
-                                <input type="text" :value="inputValue.start" v-on="inputEvents.start" />
-                                <font-awesome-icon icon="fa-regular fa-calendar" />
-                            </article>
-                            <article data-date-container>
-                                <input type="text" :value="inputValue.end" v-on="inputEvents.end" />
-                                <font-awesome-icon icon="fa-regular fa-calendar" />
-                            </article>                        
-                        </div>
-                    </template>
-                </VDatePicker>
-                <button type="button" @click="setToday()">Today</button>
+    <!-- <h1 data-common-head-title>출고관리</h1> -->
+    <div class="common-filter-body">
+        <div class="common-filter-container">
+            <div class="each-filter">
+                <h2 class="ft-header">출하기간</h2>
+                <div class="filter-type-dates">
+                    <VDatePicker v-model="range" is-range>
+                        <template #default="{ inputValue, inputEvents }">
+                            <div class="flex justify-center items-center">
+                                <article data-date-container>
+                                    <input type="text" :value="inputValue.start" v-on="inputEvents.start" />
+                                    <font-awesome-icon icon="fa-regular fa-calendar" />
+                                </article>
+                                <article data-date-container>
+                                    <input type="text" :value="inputValue.end" v-on="inputEvents.end" />
+                                    <font-awesome-icon icon="fa-regular fa-calendar" />
+                                </article>                        
+                            </div>
+                        </template>
+                    </VDatePicker>
+                    <!-- <button type="button" @click="setToday()">Today</button> -->
+                </div>
             </div>
-            
+            <div class="each-filter">
+                <h2 class="ft-header">품목</h2>
+                <input type="text">
+            </div>
+            <div class="each-filter">
+                <h2 class="ft-header">재질</h2>
+                <input type="text">
+            </div>
+            <!-- -->
+            <div class="each-filter">
+                <h2 class="ft-header">재고구분</h2>
+                <div class="filter-type-checkbox">
+                    <label>
+                        <input type="checkbox" name="stockCate" value="rawMt">
+                        원소재
+                    </label>
+                    <label>
+                        <input type="checkbox" name="stockCate" value="prod">
+                        제품
+                    </label>
+                    <label>
+                        <input type="checkbox" name="stockCate" value="stProd">
+                        보관품
+                    </label>
+                </div>
+            </div>
+            <div class="each-filter">
+                <h2 class="ft-header">두께</h2>
+                <input data-filter-thick-min type="text">
+                <input data-filter-thick-max type="text">
+            </div>
+            <div class="each-filter">
+                <h2 class="ft-header">폭</h2>
+                <input data-filter-width-min type="text">
+                <input data-filter-width-max type="text">
+            </div>
+
         </div>
-        <button class="common-filter-button" id="scmSearchBtn" type="button">
-            <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-            <p>Search</p>
-        </button>
+        <div class="filter-button-container">
+            <button class="common-filter-button" id="scmSearchBtn" type="button">
+                <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                <p>Search</p>
+            </button>
+            <button class="common-filter-button" id="scmExcelBtn" type="button">
+                <font-awesome-icon icon="fa-regular fa-file-excel" />
+                <p>Excel</p>
+            </button>
+            <button class="common-filter-button" id="scmPrintBtn" type="button">
+                <font-awesome-icon icon="fa-solid fa-print" />
+                <p>Print</p>
+            </button>
+        </div>
+        
     </div>
+
     <div id="scmTexts" class="ani_down scm-common-body">
         <div class="scm-common-table">
             <div class="scm-table-header">
@@ -73,7 +115,7 @@
             </div>
         </div>
     </div>
-    <button type="button" @click="chkView()">check check</button>
+    <button type="button" @click="chkView()">test button</button>
 
 </template>
 
@@ -122,8 +164,12 @@
 </script>
 
 <style lang="scss" scoped>
+    .common-filter-container {
+        grid-template-columns: repeat(3, minmax(3rem, 1fr));
+    }
+
     .each-filter {
-        width: 25%;
+
     }
 
     // table

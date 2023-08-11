@@ -4,7 +4,7 @@
   <div id="wrap">
     <Headers />
 
-    <main id="mainView">
+    <main id="mainView" :class="{'scm-main-background': useRoute().name == 'Scm'}">
       <router-view :key="$route.path"></router-view>
     </main>
 
@@ -17,13 +17,18 @@
   import Headers from './components/Headers.vue';
   import Footers from './components/Footers.vue';
 
-
+  import { useRoute } from 'vue-router'
 
 </script>
 
 <style scoped>
 #mainView {
   padding-bottom: 10rem;
+  min-height: calc(100vh - 16.5rem);
+}
+
+.scm-main-background {
+  background-color: rgb(var(--scm-body));
 }
 
 .logo {

@@ -54,7 +54,7 @@
         @apply flex;
 
         &:nth-child(even) [data-hist-years] {
-            background-color: rgb(var(--main-clr));
+            background-color: rgb(var(--deepblue));
 
             section p {
                 color: rgb(var(--white));
@@ -66,7 +66,7 @@
 
             width: 8rem;
             height: 8rem;
-            background-color: rgba(var(--black) .075);
+            background-color: rgba(var(--black) .05);
             margin-right: 4rem;
             flex-shrink: 0;
             border-radius: .5rem;

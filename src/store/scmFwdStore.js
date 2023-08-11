@@ -10,7 +10,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             CATE: '이것', //구분
             WK_INFO: '힘든일', //작업사항
             ST_GRADE: '', //강종
-            THICK: '', //두께
+            THICK: '두꺼움', //두께
             WIDTH: '', //폭
             LENGTH: '', //길이
             CUT: '', //CUT
@@ -25,7 +25,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             CATE: '저것', //구분
             WK_INFO: '많은일', //작업사항
             ST_GRADE: '', //강종
-            THICK: '', //두께
+            THICK: '너무나도두꺼운', //두께
             WIDTH: '', //폭
             LENGTH: '', //길이
             CUT: '', //CUT
@@ -40,7 +40,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             CATE: '그것', //구분
             WK_INFO: '그런일', //작업사항
             ST_GRADE: '', //강종
-            THICK: '', //두께
+            THICK: '얇음', //두께
             WIDTH: '', //폭
             LENGTH: '', //길이
             CUT: '', //CUT

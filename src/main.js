@@ -22,14 +22,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* 원하는 아이콘을 개별적으로 import */
-import { faLocationDot, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import { faCircleXmark, faCircleDown, faShareFromSquare, faCalendar, faFile } from '@fortawesome/free-regular-svg-icons'
-import { faUser, faLock, faMagnifyingGlass, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faPrint, faCheck, faUserGear, faLocationDot, faArrowRightFromBracket, faUser, faLock, faMagnifyingGlass, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faFileExcel, faCircleXmark, faCircleDown, faShareFromSquare, faCalendar, faFile } from '@fortawesome/free-regular-svg-icons'
+
 
 
 
 /* 위에서 import한 아이콘들을 Core library에 등록 */
-library.add(faCircleXmark, faCircleDown, faShareFromSquare, faLocationDot, faUser, faLock, faMagnifyingGlass, faCalendar, faFile, faAngleLeft, faAngleRight, faArrowRightFromBracket )
+library.add(faCircleXmark, faCircleDown, faShareFromSquare, faLocationDot, faUser, faLock, faMagnifyingGlass, faCalendar, faFile, faAngleLeft, faAngleRight, faArrowRightFromBracket, faUserGear, faCheck, faFileExcel, faPrint )
 
 /* font awesome 컴포넌트를 전역으로 등록 */
 app.component('font-awesome-icon', FontAwesomeIcon)
