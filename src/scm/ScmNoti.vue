@@ -43,7 +43,6 @@
                 <li @click="recentPage = recentPage < totalPageNum - 1 ? recentPage + 1 : recentPage = totalPageNum - 1"><font-awesome-icon icon="fa-solid fa-angle-right" /></li>
             </ul>
         </div>
-        <!-- <button type="button" @click="chkPage"> recentPage 확인용 버튼</button> -->
     </div>
 </template>
 

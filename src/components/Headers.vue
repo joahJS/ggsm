@@ -1,5 +1,5 @@
 <template>
-    <header :class="{'nav-back-transp': useRoute().path == '/'}">
+    <header :class="[{'nav-back-transp': useRoute().path == '/'}, {'nav-close': useRoute().name == 'Scm'}, {'nav-close': useRoute().name == 'ScmLogin'} ]">
         <div class="common-inner">
             <router-link to="/">
                 <img v-if="useRoute().path == '/'" data-main-logo src="/logo_w.png" alt="메인 로고 이미지">
@@ -121,6 +121,10 @@
 
         > .common-inner {
             @apply flex items-center w-full;
+        }
+
+        &.nav-close {
+            display: none;
         }
     }
 
