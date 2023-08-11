@@ -24,6 +24,13 @@ export const useScmStore = defineStore('scm', () => {
         }
     ])
 
-    return { scmGroup }
+    const scmUsr = ref([
+        {
+            NAME: '농심',
+            COMPNO: '735-86-01813'
+        },
+    ])
+
+    return { scmGroup, scmUsr }
 
 })
