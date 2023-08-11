@@ -73,7 +73,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin-left: 1.85rem;
-            color: rgba(var(--main-clr), 1);
+            color: rgba(var(--black) 1);
 
 
         }
@@ -100,7 +100,7 @@
             font-size: 1.5rem;
             width: 2.5rem;
             height: 2.5rem;
-            background-color: rgba(var(--main-clr), 1);
+            background-color: rgba(var(--deepblue), 1);
             border-radius: 50%;
             flex-shrink: 0;
             

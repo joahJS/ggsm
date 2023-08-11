@@ -50,8 +50,9 @@
 
 
 [data-common-head-title] {
-    @apply font-bold w-full;
+    @apply w-full;
 
+    font-weight: 900;
     margin: 3rem 0 4rem;
     font-size: var(--font32);
     animation-name: move_down;
@@ -83,6 +84,10 @@
     bottom: 1rem;
     right: 1rem;
 
+    svg {
+        color: rgba(var(--deepblue), 1);
+    }
+
     font-awesome-icon {
         width: 1rem;
         height: 1rem;
@@ -90,7 +95,7 @@
 }
 
 .common-button-style:hover {
-    background-color: rgba(var(--main-clr), 1);
+    background-color: rgba(var(--deepblue), 1);
 
     svg {
         color: rgba(var(--white), 1);

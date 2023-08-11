@@ -50,9 +50,7 @@
     }
 
     [data-cert-item] {
-        
-
-        background-color: rgba(var(--black) .075);
+        background-color: rgba(var(--black) .025);
         aspect-ratio: 1/1;
 
         [data-cert-thumnail] {

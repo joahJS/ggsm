@@ -10,9 +10,14 @@
                     <span>{{ item.DATE }}</span>
                 </P>
             </div>
-            <div v-html="item.TEXTS" class="board-texts-body">
-
+            
+            <div class="board-texts-body">
+                <img :src="item.IMG_URL">
+                <div v-html="item.TEXTS" >
+                
+                </div>
             </div>
+            
             <div class="common-board-button-line">
                 <router-link :to="{ name: 'Scm', params: { category: 'scmNoti' }}">
                     <button type="button" class="common-board-button">
@@ -49,8 +54,11 @@
     console.log(copyOfData)
 </script>
 <style lang="scss" scoped>
+    #scmNtcDtBody {
+        min-height: 40vh;   
+    }
     .common-board-button {
-        background-color: rgb(var(--black) 1);
+        background-color: rgb(var(--deepblue), 1);
         color: rgb(var(--white));
     }
 </style>

@@ -1,22 +1,56 @@
-.common-filter-container {
+.scm-common-inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 .5rem;
+}
+
+.common-filter-body {
     display: flex;
-    gap: 2rem;
+    width: 100%;
+    gap: 3rem;
+    justify-content: space-between;
+    background-color: rgba(var(--white), 1);
+    padding: 1rem;
+    filter: drop-shadow(0 0 8px rgba(var(--deepblue), .1));
+    border-radius: 0.5rem;
+}
+
+.common-filter-container {
+    display: grid;
+    gap: .75rem 2rem;
+
+}
+
+.filter-button-container {
+    display: flex;
+    gap: 1rem;
     align-items: flex-end;
+
 }
 
 .each-filter {
     display: flex;
-    flex-direction: column;
-    gap: .35rem;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(var(--main-black), 0.15);
 
     input, select {
-        // border: 1px solid #d8d8d8;
-        // background-color: rgba(var(--black) .075);
-        border-bottom: 1px solid #333;
-        border-radius: .5rem .5rem 0 0;
+        // border-bottom: 1px solid #333;
+        border-radius: .5rem;
         padding: .35rem .5rem;
         height: 2.25rem;
         outline: 0;
+    }
+
+    input {
+        width: 100%;
+        background-color: rgba(var(--deepblue), .075);
+        margin-bottom: 0.25rem;
+    }
+
+    input[type="checkbox"] {
+        width: 1rem;
+        cursor: pointer;
     }
 
     input[type="date"] {
@@ -36,10 +70,6 @@
         gap: .25rem;
     }
 
-    input {
-        width: 100%;
-    }
-
     input:last-child {
         &:before {
             content: '~';
@@ -50,8 +80,16 @@
 }
 
 .ft-header {
-    margin-bottom: .5rem;
-    opacity: .5;
+    opacity: .75;
+    width: 5rem;
+    flex-shrink: 0;
+    // background-color: rgba(var(--black) .05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid rgba(var(--deepblue), 1);
 }
 
 .common-filter-button {
@@ -63,11 +101,33 @@
     height: 2.25rem;
     font-size: .85rem;
     font-weight: 100;
+    background-color: rgba(var(--deepblue), 1);
+    color: rgb(var(--white));
+    // box-shadow: 4px 4px 8px 3px rgba(00,00,00,0.25);
+
+    &:hover {
+        background-color: rgba(var(--main-clr), 1);
+    }
 
     svg {
-        color: rgba(var(--black) 0.25);
+        color: rgb(var(--white));
         font-size: .85rem;
         margin-right: .75rem;
+    }
+}
+
+.filter-type-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    label {
+        display: flex;
+        align-items: center;
+
+        input[type="checkbox"] {
+            margin: 0 .5rem 0 0;
+        }
     }
 }
 
@@ -86,21 +146,28 @@
         right: 1rem;
         z-index: 2;
         color: rgba(var(--black) 0.25);
-
     }
 }
 
 .scm-common-body {
     margin-top: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    filter: drop-shadow(0 0 8px rgba(var(--deepblue), 0.1));
+
+    .scm-common-table {
+        filter: none;
+    }
 }
 
 #scmSearchBtn {
-    background-color: rgba(var(--black) 1);
+    // background-color: rgba(var(--black) 1);
+    background-color: rgba(var(--deepblue), 1);
     color: rgb(var(--white));
-    box-shadow: 4px 4px 8px 3px rgba(00,00,00,0.25);
+    // box-shadow: 4px 4px 8px 3px rgba(00,00,00,0.25);
 
     &:hover {
-        opacity: .75;
+        background-color: rgba(var(--main-clr), 1);
     }
 
     svg {
@@ -111,11 +178,16 @@
 // table
 
 .board-table-body {
-    border-top: 3px solid rgb(var(--main-black), 1);
+    border-top: 3px solid rgb(var(--deepblue), 1);
+    background-color: rgba(var(--white), 1);
 }
 
 .scm-common-table {
     font-size: var(--fontM);
+    background-color: rgba(var(--white), 1);
+    filter: drop-shadow(0 0 8px rgba(var(--deepblue), .1));
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .scm-table-body {
@@ -134,7 +206,7 @@
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem;
 
     li {
         text-overflow: ellipsis;
@@ -151,8 +223,10 @@
 }
 
 [data-scm-table-header] {
-    background-color: rgb(var(--yellow));
-    font-weight: 600;
+    // background-color: rgb(var(--yellow));
+    background-color: rgb(var(--deepblue));
+    color: rgb(var(--white));
+    font-weight: 300;
     padding: .5rem 0;
     user-select: none;
 
@@ -203,6 +277,11 @@
     border-top: 1px solid rgba(var(--main-black), .15);
     border-bottom: 1px solid rgba(var(--main-black), .15);
     padding: 1rem 0;
+
+    img {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
 
     p {
         line-height: 1.75;

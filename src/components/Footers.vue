@@ -4,11 +4,19 @@
             <img data-ft-logo :src="item.ftLogo" alt="logo-footer">
             <section>
                 <ul data-ft-menus>
-                    <li>개인정보 처리방침</li>
-                    <li>이용약관</li>
-                    <li>공지사항</li>
+                    <li>
+                        <router-link :to="{ name: 'Greet' }">
+                            회사소개
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link :to="{ name: 'Notice' }">
+                            공지사항
+                        </router-link>
+                    </li>
                 </ul>
                 <article>
+                    <p>{{ item.compname }}</p>
                     <p>{{ item.address }}</p>
                     <p>TEL : {{ item.tel }}</p>
                     <p>FAX : {{ item.fax }}</p>
@@ -35,18 +43,19 @@
     footer {
         @apply w-full flex;
 
-        padding: 2rem 0;
-        background-color: rgba(var(--black) .753);
+        padding: 1.5rem 0 2rem;
+        // background-color: rgba(var(--black) .753);
+        background-color: rgba(var(--main-black), .5);
         color: rgb(var(--white));
         font-weight: 100;
 
         > .common-inner {
             @apply flex w-full;
 
-            gap: 2rem;
+            gap: 3rem;
 
             img {
-                width: 4rem;
+                width: 5rem;
             }
         }
 
@@ -77,6 +86,10 @@
                 height: .75rem;
                 background-color: rgb(var(--white));
                 margin-right: 1.25rem;
+            }
+
+            &:hover {
+                font-weight: 500;
             }
         }
     }
