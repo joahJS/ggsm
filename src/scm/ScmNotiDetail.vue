@@ -1,5 +1,5 @@
 <template>
-    <SubpHero />
+    <ScmHeaders />
     <div id="scmNtcDtBody" class="ani_down common-inner board-detail-inner">
         <h1 data-common-head-title>공지사항</h1>
         <div v-for="item in getThisData" id="scmNtcDtText" class="ani_down common-inner">
@@ -30,7 +30,7 @@
 
 </template>
 <script setup>
-    import SubpHero from '@/components/SubpHero.vue';
+    import ScmHeaders from '@/components/ScmHeaders.vue';
     import { useRoute } from 'vue-router'
 
     //store에서 영역별 데이터 import
@@ -44,6 +44,8 @@
     const getId = parseInt(getParams.params.id)
 
     console.log(getId)
+
+    console.log(useRoute().name)
 
     //Front에서 사용하기위하여 가져온 데이터를 별도의 배열로 복사
     const copyOfData = [...scmNoticeGroup.value]

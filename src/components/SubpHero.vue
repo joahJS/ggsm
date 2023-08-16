@@ -6,13 +6,13 @@
                 
                     <ul v-if="item.childrens.find(e => e.subTo === '/prod')" data-subp-tap>
                         <router-link v-for="subItem in item.childrens" :to="subItem.category">
-                            <li v-if="item.childrens.find(e => e.category === getCate)" :class="{'recent-page':subItem.category == getCate}">{{ subItem.category }}</li>
+                            <li v-if="item.childrens.find(e => e.category === getCate)" :class="{'recent-page': subItem.category == getCate}">{{ subItem.category }}</li>
                         </router-link>
                     </ul>
 
                     <ul v-else data-subp-tap>
                         <router-link v-for="subItem in item.childrens" :to="subItem.subTo">
-                            <li v-if="item.childrens.find(e => e.subTo === useRoute().path)" :class="{'recent-page':subItem.subTo == useRoute().path}">{{ subItem.subTitle }}</li>
+                            <li v-if="item.childrens.find(e => e.subTo === useRoute().path)" :class="{'recent-page': subItem.subTo == useRoute().path}">{{ subItem.subTitle }}</li>
                         </router-link>
                     </ul>
                 

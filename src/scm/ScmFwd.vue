@@ -81,23 +81,24 @@
         <div class="scm-common-table">
             <div class="scm-table-header">
                 <ul class="scm-table-line" data-scm-table-header>
-                    <li><input v-model="hdCheck" value="allChecked" type="checkbox"></li>
-                    <li>구분</li>
-                    <li>작업사항</li>
+                    <li>출고일자</li>
+                    <li>전표번호</li>
+                    <li>품목</li>
                     <li>강종</li>
-                    <li>두께</li>
-                    <li>폭</li>
-                    <li>길이</li>
-                    <li>CUT</li>
-                    <li>등분</li>
-                    <li>작업사항</li>
-                    <li>요구사항</li>
-                    <li>작성일</li>
-                    <li>확인유무</li>
+                    <li>재질</li>
+                    <li>도금량</li>
+                    <li>치수</li>
+                    <li>수량</li>
+                    <li>중량</li>
+                    <li>창고</li>
+                    <li>제품번호</li>
+                    <li>코일번호</li>
+                    <li>의뢰번호</li>
+                    <li>비고</li>
                 </ul>
             </div>
             <div class="scm-table-body">
-                <ul v-for="item in copyOfData" class="scm-table-line">
+                <!-- <ul v-for="item in copyOfData" class="scm-table-line">
                     <li><input type="checkbox" v-model="item.CHK"></li>
                     <li>{{ item.CATE }}</li>
                     <li>{{ item.WK_INFO }}</li>
@@ -111,6 +112,22 @@
                     <li>{{ item.REQ }}</li>
                     <li>{{ item.DATE }}</li>
                     <li>{{ item.IS_VIEW }}</li>
+                </ul> -->
+                <ul v-for="item in copyOfData" class="scm-table-line">
+                    <li>{{ item.FWDDATE }}</li>
+                    <li>{{ item.STNO }}</li>
+                    <li>{{ item.ITEM }}</li>
+                    <li>{{ item.STGRADE }}</li>
+                    <li>{{ item.MATERIAL }}</li>
+                    <li>{{ item.MOP }}</li>
+                    <li>{{ item.SIZE }}</li>
+                    <li>{{ item.QUANTITY }}</li>
+                    <li>{{ item.WEIGHT }}</li>
+                    <li>{{ item.WARE }}</li>
+                    <li>{{ item.PRODNO }}</li>
+                    <li>{{ item.COILNO }}</li>
+                    <li>{{ item.REQNO }}</li>
+                    <li>{{ item.NOTE }}</li>
                 </ul>
             </div>
         </div>
@@ -133,7 +150,7 @@
     const hdCheck = ref([])
 
     function chkView() {
-        console.log(copyOfData[0].CHK + ', ' + copyOfData[1].CHK + ', ' + copyOfData[2].CHK)
+        console.log()
     }
 
     const range = ref({
@@ -175,7 +192,28 @@
     // table
 
     .scm-table-line {
-        grid-template-columns: .3fr repeat(8, .6fr) 1.5fr 1.5fr .6fr .6fr;
+        grid-template-columns: minmax(7.5rem, 1fr) repeat(2, 1fr) .75fR 1.25fr 1fr 1.25fr .75fr 1fr 1fr 1fr 1fr 1fr 2fr;
+        padding: 1rem 0;
     }
+
+    // @media (max-width: 1919px) {
+    //     .common-filter-container {
+    //         grid-template-columns: repeat(2, minmax(3rem, 1fr));
+    //     }
+    // }
+
+    // @media (max-width: 1279px) {
+
+    // }
+
+    // @media (max-width: 1023px) {
+
+    // }
+
+    // @media (max-width: 767px) {
+    //     .common-filter-container {
+    //         grid-template-columns: repeat(1, minmax(3rem, 1fr));
+    //     }
+    // }
 
 </style>

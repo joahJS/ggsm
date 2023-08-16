@@ -27,7 +27,7 @@ export const useScmStore = defineStore('scm', () => {
     const scmUsr = ref([
         {
             NAME: '농심',
-            COMPNO: '735-86-01813'
+            SANO: '735-86-01813'
         },
     ])
 
