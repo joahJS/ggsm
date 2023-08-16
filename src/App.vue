@@ -1,7 +1,7 @@
 
 
 <template>
-  <div id="wrap">
+  <div id="wrap" :class="{'scm-min-width': useRoute().name == 'Scm'}">
     <Headers />
 
     <main id="mainView" :class="{'scm-main-background': useRoute().name == 'Scm'}">
@@ -29,7 +29,10 @@
 
 .scm-main-background {
   background-color: rgb(var(--scm-body));
+  min-width: 100rem;
 }
+
+
 
 .logo {
   height: 6em;

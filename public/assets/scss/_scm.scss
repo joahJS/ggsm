@@ -2,6 +2,7 @@
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 .5rem;
+    min-width: 100rem;
 }
 
 .common-filter-body {
@@ -46,6 +47,11 @@
         width: 100%;
         background-color: rgba(var(--deepblue), .075);
         margin-bottom: 0.25rem;
+        min-width: 8.625rem;
+
+        &[type=checkbox] {
+            min-width: 1rem;
+        }
     }
 
     input[type="checkbox"] {
@@ -99,7 +105,7 @@
     // border: 1px solid rgba(var(--black) 1);
     border-radius: 2rem;
     height: 2.25rem;
-    font-size: .85rem;
+    font-size: var(--font13);
     font-weight: 100;
     background-color: rgba(var(--deepblue), 1);
     color: rgb(var(--white));
@@ -111,7 +117,7 @@
 
     svg {
         color: rgb(var(--white));
-        font-size: .85rem;
+        font-size: var(--font13);
         margin-right: .75rem;
     }
 }
@@ -173,6 +179,10 @@
     svg {
         color: rgb(var(--white));
     }
+}
+
+.scm-min-width {
+    min-width: 100rem;
 }
 
 // table
@@ -371,3 +381,67 @@
     height: 100%;
 }
 
+
+// 반응형
+
+// @media (max-width: 1919px) {
+//     .common-filter-container {
+//         // grid-template-columns: repeat(2, minmax(3rem, 1fr));
+//     }
+// }
+
+// @media (max-width: 1279px) {
+//     .common-filter-body {
+//         flex-direction: column;
+//     }
+// }
+
+// @media (max-width: 1023px) {
+//     .each-filter {
+//         input {
+//             font-size: var(--font13);
+//             min-width: 7rem;
+
+//             &[type=checkbox] {
+//                 min-width: 1rem;
+//             }
+//         }
+//     }
+
+//     .ft-header {
+//         font-size: var(--font13);
+//         width: 4rem;
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     .common-filter-container {
+//         // grid-template-columns: repeat(1, minmax(3rem, 1fr));
+//         gap: 1.25rem;
+//     }
+
+//     .each-filter {
+//         flex-direction: column;
+//         gap: 0.5rem;
+//     }
+
+//     .ft-header {
+//         border-bottom: 0;
+//         height: 1.5rem;
+//         font-weight: 700;
+//     }
+
+//     .filter-type-checkbox {
+//         label {
+//             font-size: var(--font13);
+//         }
+//     }
+
+//     .filter-button-container {
+//         gap: .5rem;
+//     }
+
+//     .common-filter-button {
+//         padding: .5rem .75rem;
+//     }
+// }

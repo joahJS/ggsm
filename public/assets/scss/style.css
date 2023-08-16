@@ -130,6 +130,7 @@
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 0.5rem;
+  min-width: 100rem;
 }
 
 .common-filter-body {
@@ -170,6 +171,10 @@
   width: 100%;
   background-color: rgba(var(--deepblue), 0.075);
   margin-bottom: 0.25rem;
+  min-width: 8.625rem;
+}
+.each-filter input[type=checkbox] {
+  min-width: 1rem;
 }
 .each-filter input[type=checkbox] {
   width: 1rem;
@@ -213,7 +218,7 @@
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 2rem;
   height: 2.25rem;
-  font-size: 0.85rem;
+  font-size: var(--font13);
   font-weight: 100;
   background-color: rgba(var(--deepblue), 1);
   color: rgb(var(--white));
@@ -223,7 +228,7 @@
 }
 .common-filter-button svg {
   color: rgb(var(--white));
-  font-size: 0.85rem;
+  font-size: var(--font13);
   margin-right: 0.75rem;
 }
 
@@ -275,6 +280,10 @@
 }
 #scmSearchBtn svg {
   color: rgb(var(--white));
+}
+
+.scm-min-width {
+  min-width: 100rem;
 }
 
 .board-table-body {

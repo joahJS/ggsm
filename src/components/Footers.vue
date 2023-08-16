@@ -1,5 +1,5 @@
 <template>
-    <footer v-if="useRoute().path !== '/'" v-for="item in ftGroup">
+    <footer v-if="useRoute().path !== '/'" v-for="item in ftGroup" :class="{'scm-min-width': useRoute().name == 'Scm'}">
         <div class="common-inner">
             <img data-ft-logo :src="item.ftLogo" alt="logo-footer">
             <section>
