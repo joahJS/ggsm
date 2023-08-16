@@ -12,7 +12,7 @@
                 <input type="text" id="loginPw" placeholder="Password">
             </div>
             <router-link :to="{name: 'Scm', params: {category: 'scmNoti'}}" data-login-button-container>
-                <button data-login-button type="button">LOGIN</button>
+                <button class="bg-bid-blue" data-login-button type="button">LOGIN</button>
             </router-link>
         </div>
     </section>
@@ -120,11 +120,11 @@
     [data-login-button] {
         margin-top: 6rem;
         padding: 1.25rem 1rem;
-        background-color: rgba(var(--deepblue), 1);
+        // background-color: rgba(var(--deepblue), 1);
         border-radius: 3rem;
         font-size: 1.25rem;
         transition: all .35s;
-        filter: drop-shadow(0 0 4px rgba(var(--main-clr) 0.5));
+        // filter: drop-shadow(0 0 4px rgba(var(--main-clr) 0.5));
         font-weight: 900;
         letter-spacing: 2px;
 

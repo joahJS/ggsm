@@ -1,15 +1,28 @@
 <template>
     <h1 data-common-head-title>공지사항</h1>
+
+    <div class="common-filter-body">
+        <div class="each-filter">
+            <h2 class="ft-header">통합검색</h2>
+            <input type="text">
+        </div>
+        <div class="filter-button-container">
+            <button class="common-filter-button" id="scmSearchBtn" type="button">
+                <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                <p>Search</p>
+            </button>
+        </div>
+    </div>
+
     <div id="scmTexts" class="ani_down">
         <div class="scm-common-table">
-            <!-- <div class="scm-table-header">
+            <div class="scm-table-header">
                 <ul class="scm-table-line" data-scm-table-header>
-                    <li>No</li>
-                    <li>제목</li>
                     <li>작성일</li>
+                    <li>제목</li>
                     <li>파일</li>
                 </ul>
-            </div> -->
+            </div>
             <div class="board-table-body">
                 <router-link v-for="item in dataPerPage[recentPage]" :to="{ name: 'ScmDetail', params: { id: item.NO } }">
                     <ul class="scm-table-line">
@@ -98,18 +111,59 @@
 
 <style lang="scss" scoped>
     // table
+    #scmTexts .scm-table-header .scm-table-line {
+        padding: .75rem 1rem;
+        background-color: rgba(var(--deepblue), 1);
+        font-size: var(--fontMT);
 
-    .board-table-body .scm-table-line {
-        grid-template-columns: 10rem 1fr .2fr 3rem;
+        &:hover {
+            background-color: rgba(var(--deepblue), 1);
+        }
+    }
+
+    #scmTexts .scm-table-line {
+        grid-template-columns: 9rem 1fr 5rem;
+        padding: 1.5rem 1.5rem;
+        // border-bottom: 1px solid rgba(var(--main-black), .15);
 
         &:hover {
             background-color: rgba(var(--main-black), .05);
         }
+
+        [data-list-file-yn] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
-    .board-table-body li:nth-child(2) {
-        text-align: start;
-        padding: 0 1rem;
+    .board-table-body {
+        background-color: transparent;
+        
+        li:nth-child(2) {
+            text-align: start;
+            padding: 0 1rem;
+        }        
+
+        a:nth-child(odd) {
+            display: block;
+            background-color: rgba(var(--white), 1);
+        }
+
+        a:nth-child(even) {
+            background-color: transparent;
+        }
+    }
+
+    .scm-common-table {
+        filter: none;
+        background-color: transparent;
+    }
+
+    .common-filter-body {
+        justify-content: flex-end;
+        background-color: transparent;
+        margin-bottom: 0.5rem;
     }
     
 </style>

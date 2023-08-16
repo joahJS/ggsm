@@ -14,6 +14,7 @@
     padding: 1rem;
     filter: drop-shadow(0 0 8px rgba(var(--deepblue), .1));
     border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .common-filter-container {
@@ -156,10 +157,9 @@
 }
 
 .scm-common-body {
-    margin-top: 2rem;
     border-radius: 0.5rem;
     overflow: hidden;
-    filter: drop-shadow(0 0 8px rgba(var(--deepblue), 0.1));
+    filter: drop-shadow(0 0 12px rgba(var(--deepblue), 0.1));
 
     .scm-common-table {
         filter: none;
@@ -167,10 +167,8 @@
 }
 
 #scmSearchBtn {
-    // background-color: rgba(var(--black) 1);
-    background-color: rgba(var(--deepblue), 1);
-    color: rgb(var(--white));
-    // box-shadow: 4px 4px 8px 3px rgba(00,00,00,0.25);
+    background: linear-gradient(135deg, rgba(var(--deepblue), 1), rgba(var(--midblue), 1));
+    filter: drop-shadow(3px 3px 6px rgba(var(--deepblue), .45));
 
     &:hover {
         background-color: rgba(var(--main-clr), 1);
@@ -188,15 +186,16 @@
 // table
 
 .board-table-body {
-    border-top: 3px solid rgb(var(--deepblue), 1);
+    // border-top: 2px solid rgb(var(--black) 1);
+    border-bottom: 1px solid rgb(var(--main-black), 1);
     background-color: rgba(var(--white), 1);
 }
 
 .scm-common-table {
     font-size: var(--fontM);
     background-color: rgba(var(--white), 1);
-    filter: drop-shadow(0 0 8px rgba(var(--deepblue), .1));
-    border-radius: 0.5rem;
+    filter: drop-shadow(0 5px 8px rgba(var(--deepblue), .1));
+    // border-radius: 0.5rem;
     overflow: hidden;
 }
 
@@ -204,19 +203,31 @@
     border-top: 1px solid rgba(var(--main-black) .5);
 
     .scm-table-line:hover {
-        background-color: rgba(var(--black) .05);
+        background-color: rgba(var(--main-black), .1);
+    }
+
+    ul:nth-child(even) {
+        
+        background-color: rgba(var(--deepblue), .05);
+    }
+}
+
+.board-table-body {
+    a:nth-child(even) {
+        display: block;
+        background-color: rgba(var(--deepblue), .05);
     }
 }
 
 .scm-table-line {
     display: grid;
     // grid-template-columns: .3fr repeat(8, .6fr) 1.5fr 1.5fr .6fr .6fr;
-    border-bottom: 1px solid rgba(var(--black) 0.15);
+    // border-bottom: 1px solid rgba(var(--black) 0.15);
     user-select: none;
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding: 1rem;
+    padding: .5rem 1rem;
 
     li {
         text-overflow: ellipsis;
@@ -225,10 +236,18 @@
         overflow: hidden;
         word-break: keep-all;
         white-space: nowrap;
+        height: -webkit-fill-available;
     }
 
     &[data-scm-table-header] {
         border-bottom: 0;
+    }
+}
+
+.scm-data-table-line {
+
+    li {
+        border-right: 1px solid rgba(var(--main-black), .15);
     }
 }
 
@@ -370,7 +389,9 @@
     }
 
     [data-list-date-day] {
-        font-size: var(--fontT);
+        font-size: var(--fontST);
+        font-weight: 900;
+        line-height: 1.2;
     }
 }
 
@@ -379,6 +400,18 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+}
+
+.bg-bid-blue {
+    background: linear-gradient(135deg, rgba(var(--deepblue), 1), rgba(var(--midblue), 1));
+    filter: drop-shadow(3px 3px 6px rgba(var(--deepblue), 0.45));
+}
+
+.bg-excel-green {
+    // background-color: rgb(19, 183, 149);
+    background-color: rgb(var(--exgreen));
+    // background: linear-gradient(135deg, rgb(19, 183, 149), rgb(var(--midblue)));
+    // filter: drop-shadow(3px 3px 6px rgba(17, 162, 247, .5));
 }
 
 

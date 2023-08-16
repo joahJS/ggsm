@@ -28,7 +28,8 @@
 }
 
 .scm-main-background {
-  background-color: rgb(var(--scm-body));
+  background-color: rgba(var(--scm-body), .5);
+  
   min-width: 100rem;
 }
 
