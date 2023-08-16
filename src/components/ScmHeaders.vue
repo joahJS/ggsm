@@ -15,7 +15,7 @@
                         <font-awesome-icon icon="fa-solid fa-user" />
                         <span data-comp-name>{{ item.NAME }}</span>
                         <span data-comp-no>[{{ item.SANO }}]</span>
-                        님 안녕하세요.
+                        <span class="scm-mob-none">님 안녕하세요.</span>
                     </p>
                     <button @click="viewUsrInfo()" id="scmUsrModify" type="button">
                         <font-awesome-icon icon="user-gear" />
@@ -33,7 +33,7 @@
                 </ul>
             </div>
 
-            <ul v-if="isScmMobile == true" id="mobNavBtn">
+            <ul v-if="isScmMobile == true" id="mobNavBtn" @click="isScmMobile = false">
                 <li></li>
                 <li></li>
                 <li></li>
@@ -104,12 +104,14 @@
         console.log(copyOfUsr)
     }
 
-    const isScmMobile = ref(matchMedia('(max-width: 767px)').matches ? true : false)
+    const isScmMobile = ref(false)
+
+    // const isScmMobile = ref(matchMedia('(max-width: 767px)').matches ? true : false)
 
     // 해상도 767px 이하일 시 
-    if ( matchMedia("(max-width: 767px)").matches ) {
-        isScmMobile.value = true
-    }
+    // if ( matchMedia("(max-width: 767px)").matches ) {
+    //     isScmMobile.value = true
+    // }
 
     console.log(getParams)
     console.log(useRoute().name)
@@ -239,8 +241,10 @@
 
     #usrInfoMd {
         display: block;
-        width: 100vw;
-        height: 100vh;
+        // width: 100vw;
+        // height: 100vh;
+        width: 100%;
+        height: 100%;
         position: fixed;
         z-index: 9;
         top: 0;
@@ -362,6 +366,9 @@
         position: absolute;
         top: 2rem;
         right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
 
         li {
             content: '';
@@ -371,4 +378,53 @@
             background-color: rgba(var(--deepblue));
         }
     }   
+
+    // @media (max-width: 767px) {
+    //     #scmHeader {
+    //         padding: 1rem 0;
+    //     }
+
+    //     #scmRight {
+    //         position: fixed;
+    //         top: 0;
+    //         right: 0;
+    //         width: 18.75rem;
+    //         height: 100%;
+    //         background-color: rgba(var(--white), .975);
+            
+    //         z-index: 9;
+    //         padding: 1.25rem;
+    //         align-items: flex-start;
+    //         gap: 2rem;
+    //         border-left: 4px solid rgba(var(--main-black), 1);
+
+    //         button {
+    //             margin-left: 0;
+    //             margin-right: .5rem;
+    //         }
+    //     }
+
+    //     #usrInfoNav {
+    //         flex-wrap: wrap;
+    //         justify-content: flex-start;
+
+    //         p {
+    //             width: 100%;
+    //             margin-bottom: 1.5rem;
+    //         }
+    //     }
+
+    //     #scmNav {
+    //         flex-direction: column;
+
+    //         li {
+    //             font-size: var(--fontM);
+    //             width: fit-content;
+    //         }
+    //     }
+
+    //     .scm-mob-none {
+    //         display: none;
+    //     }
+    // }
 </style>

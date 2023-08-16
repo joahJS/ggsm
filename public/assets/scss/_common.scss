@@ -23,6 +23,10 @@
     font-display: swap;
 }
 
+#app {
+    overflow: auto;
+}
+
 :root {
     font-family: 'NS-Neo';
     font-size: 16px;
