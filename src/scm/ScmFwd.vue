@@ -65,7 +65,7 @@
                 <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
                 <p>Search</p>
             </button>
-            <button class="common-filter-button" id="scmExcelBtn" type="button">
+            <button class="common-filter-button bg-excel-green" id="scmExcelBtn" type="button">
                 <font-awesome-icon icon="fa-regular fa-file-excel" />
                 <p>Excel</p>
             </button>
@@ -80,7 +80,7 @@
     <div id="scmTexts" class="ani_down scm-common-body">
         <div class="scm-common-table">
             <div class="scm-table-header">
-                <ul class="scm-table-line" data-scm-table-header>
+                <ul class="scm-table-line scm-data-table-line bg-bid-blue" data-scm-table-header>
                     <li>출고일자</li>
                     <li>전표번호</li>
                     <li>품목</li>
@@ -192,9 +192,25 @@
     // table
 
     .scm-table-line {
-        grid-template-columns: minmax(7.5rem, 1fr) repeat(2, 1fr) .75fR 1.25fr 1fr 1.25fr .75fr 1fr 1fr 1fr 1fr 1fr 2fr;
-        padding: 1rem 0;
+        grid-template-columns: minmax(7.5rem, 1fr) repeat(2, 1fr) .75fR 1.25fr 1fr .75fr .75fr 1fr 1fr 1fr 1fr minmax(11rem, 1.5fr) 2fr;
+        padding: .75rem 0;
+
+        li {
+            border-right: 1px solid rgba(var(--main-black), .1);
+            padding: 0 1rem;
+            text-align: left;
+
+            &:nth-child(3) {
+                
+            }
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
     }
+
+    
 
     // @media (max-width: 1919px) {
     //     .common-filter-container {
