@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-    <button type="button" @click="chkView()">test button</button>
+    <!-- <button type="button" @click="chkView()">test button</button> -->
 
 </template>
 
@@ -208,6 +208,11 @@
                 border-right: 0;
             }
         }
+    }
+
+    .scm-table-header .scm-table-line li {
+        text-align: center;
+        color: rgba(var(--white), 1);
     }
 
     

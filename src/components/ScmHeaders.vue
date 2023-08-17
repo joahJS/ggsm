@@ -1,6 +1,6 @@
 <template>
     <div id="scmHeader">
-        <div class="common-inner scm-header-container">
+        <div class="scm-common-inner scm-header-container">
             <router-link to="/">
                 <p @click="forUsrChk()" data-scm-comp-name>금강에스엠 SCM</p>
             </router-link>
@@ -60,13 +60,47 @@
                         <p class="usr-info-body-title">사업자등록번호</p>
                         <input class="usr-info-body-text" type="text" v-model="item.SANO">
                     </li>
+                    <li>
+                        <p class="usr-info-body-title">
+                            비밀번호 변경
+                        </p>
+                        <div data-usrinfo-pw-change>
+                            <input ref="recentPW" class="usr-info-body-text" type="password" placeholder="현재 비밀번호">
+                            <!-- 비밀번호 보기 버튼 -->
+                            <button data-pw-show-button v-show="pwHide == false" @click="pwHide = true" type="button">
+                                <font-awesome-icon icon="fa-eye" />
+                            </button>
+                            <!-- 비밀번호 숨기기 버튼 -->
+                            <button data-pw-hide-button v-show="pwHide == true" @click="pwHide = false" type="button">
+                                <font-awesome-icon icon="fa-eye-slash" />
+                            </button>
+                        </div>
+                        <div data-usrinfo-pw-change>
+                            <input ref="newPW" @input="isSameChk()" class="usr-info-body-text" type="password" placeholder="비밀번호 확인">
+                            <!-- 비밀번호 보기 버튼 -->
+                            <button data-pw-show-button v-show="pwHide == false" @click="pwHide = true" type="button">
+                                <font-awesome-icon icon="fa-eye" />
+                            </button>
+                            <!-- 비밀번호 숨기기 버튼 -->
+                            <button data-pw-hide-button v-show="pwHide == true" @click="pwHide = false" type="button">
+                                <font-awesome-icon icon="fa-eye-slash" />
+                            </button>
+                        </div>
+                        <div data-usrinfo-pw-alert-container>
+                            <p data-usrinfo-pw-alert-yes v-if="isSamePW == 'true'">비밀번호가 동일합니다.</p>
+                            <p data-usrinfo-pw-alert-no v-if="isSamePW == 'false'">비밀번호가 동일하지 않습니다.</p>
+                        </div>
+                        
+                    </li>
                 </ul>
                 <div class="usr-info-buttons">
                     <p data-usr-info-alert v-show="usrInfoSaveText == true">
                         <font-awesome-icon icon="check" />
                         저장되었습니다.
                     </p>
-                    <button type="button" @click="usrInfoSave()">저장</button>
+                    <button type="button" @click="usrInfoSave()">
+                        <font-awesome-icon icon="fa-floppy-disk" />
+                        저장</button>
                     <button type="button" @click="closeUsrInfo()">닫기</button>
                 </div>
 
@@ -80,6 +114,12 @@
     import { useScmStore } from '@/store/scmStore'
     import { storeToRefs } from 'pinia';
 
+    const scmStore = useScmStore()
+    const { scmGroup, scmUsr, isTap } = storeToRefs(scmStore)   
+    
+    //가져온 원본 데이터 그대로 사용 X -> 복사해서 사용하기
+    const copyOfUsr = [...scmUsr.value]
+
     import { routerKey, useRoute, useRouter } from 'vue-router'
 
     const router = useRouter()
@@ -87,19 +127,41 @@
     const getParams = useRoute().params
     const getCate = useRoute().params.category
 
-    const scmStore = useScmStore()
-    const { scmGroup, scmUsr, isTap } = storeToRefs(scmStore)   
-    const copyOfUsr = [...scmUsr.value]
+    const recentPW = ref()
+    const newPW = ref()
+    const pwHide = ref(true)
+    const isSamePW = ref()
 
+    //유저정보 Modal 관련
     const usrInfoMd = ref(false)
     const usrInfoSaveText = ref(false)
 
+    function viewUsrInfo() {
+        usrInfoMd.value = true
+    }
+
+    function closeUsrInfo() {
+        usrInfoMd.value = false
+        usrInfoSaveText.value = false
+        pwHide.value = true
+    }
+
+    function usrInfoSave() {
+        usrInfoSaveText.value = true
+
+        setTimeout(() => {
+            usrInfoSaveText.value = false
+        }, 3000)
+    }
+
+    //로그아웃
     function scmLogout() {
         router.push({
             path: '/login'
         })
     }
 
+    //테스트용
     function forUsrChk() {
         console.log(copyOfUsr)
     }
@@ -113,23 +175,31 @@
     //     isScmMobile.value = true
     // }
 
-    console.log(getParams)
-    console.log(useRoute().name)
+    watch(pwHide, (newValue, oldValue) => {
+        console.log(newValue)
 
-    function viewUsrInfo() {
-        usrInfoMd.value = true
-    }
+        if( pwHide.value == true ) {
+            recentPW.value[0].type = 'password'
+            newPW.value[0].type = 'password'
+            // console.log(recentPW.value[0].type)
+            // console.log(recentPW)
+        } else {
+            recentPW.value[0].type = 'text'
+            newPW.value[0].type = 'text'
+        }
+    })
 
-    function closeUsrInfo() {
-        usrInfoMd.value = false
-        usrInfoSaveText.value = false
-    }
+    function isSameChk() {
+        if ( newPW.value[0].value != recentPW.value[0].value ) {
+            isSamePW.value = 'false'
 
-    function usrInfoSave() {
-        usrInfoSaveText.value = true
+        } else if ( newPW.value[0].value = recentPW.value[0].value ) {
+            isSamePW.value = 'true'
+
+        } 
 
         setTimeout(() => {
-            usrInfoSaveText.value = false
+            isSamePW.value = ''
         }, 3000)
     }
 
@@ -152,6 +222,7 @@
         display: flex;    
         width: 100%;
         justify-content: space-between;
+        align-items: center;
     }
 
     #scmRight {
@@ -263,13 +334,19 @@
             cursor: pointer;
             font-size: var(--fontMT);
         }
+
+        input {
+            background-color: rgba(var(--deepblue), 0.095);
+            font-size: var(--fontM);
+        }
+
     }
 
     #usrInfoContainer .usr-info-head {
         background-color: rgba(var(--deepblue), 1);
         color: rgb(var(--white));
         border-radius: .5rem .5rem 0 0;
-        padding: .5rem;
+        padding: .75rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -288,13 +365,13 @@
     .usr-info-body {
         background-color: rgba(var(--white), 1);
         border-radius: 0 0 .5rem .5rem;
-        padding: .5rem;
+        padding: .75rem;
     }
 
     .usr-info-body-list {
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: .75rem;
         align-items: flex-start;
 
         li {
@@ -305,12 +382,18 @@
         }
     }
 
-    .usr-info-body-title {
+    #usrInfoContainer .usr-info-body-title {
         color: rgba(var(--main-black), .5);
+        display: flex;
+        align-items: center;
+
+        svg {
+            font-size: var(--fontM);
+        }
     }
 
     .usr-info-body-text {
-        border: 1px solid rgba(var(--black) .25);
+        // border: 1px solid rgba(var(--black) .25);
         padding: .25rem .5rem;
         border-radius: .25rem;
     }
@@ -319,7 +402,7 @@
 
     }
 
-    .usr-info-buttons {
+    #usrInfoContainer .usr-info-buttons {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -345,6 +428,8 @@
 
             svg {
                 color: rgb(var(--white));
+                font-size: var(--font13);
+                margin-right: .5rem;
             }
         }
 
@@ -427,4 +512,48 @@
     //         display: none;
     //     }
     // }
+
+    #usrInfoContainer [data-usrinfo-pw-change] {
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            padding: 0.5rem;
+
+            svg {
+                font-size: var(--fontM);
+                color: rgba(var(--main-black), .5);
+            }
+
+
+            &[data-pw-hide-button] {
+                svg {
+                    color: rgba(var(--main-black), .35);
+                }
+            }
+
+            &:hover {
+                // background-color: rgba(var(--black) .05);
+            }
+        }
+    }
+
+    [data-usrinfo-pw-alert-container] {
+        height: 1.5rem;
+
+        p {
+            font-size: var(--fontM);
+        }
+
+        [data-usrinfo-pw-alert-yes] {
+            color: rgba(var(--deepblue), 1);
+        }
+
+        [data-usrinfo-pw-alert-no] {
+            color: rgba(var(--alertred), 1);
+        }
+    }
 </style>

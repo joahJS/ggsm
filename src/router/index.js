@@ -84,6 +84,11 @@ const routes = [
     name: 'ScmDetail',
     component: () => import( /* webpackChunkName: 'ScmDetail' */ '@/scm/ScmNotiDetail.vue')
   },
+  { 
+    path: '/scm/scmNotiWr',
+    name: 'ScmNotiWr',
+    component: () => import( /* webpackChunkName: 'ScmNotiWr' */ '@/scm/ScmNotiWr.vue')
+  }
 
   
 
