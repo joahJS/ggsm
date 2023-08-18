@@ -1,7 +1,7 @@
 <template>
-    <h1 data-common-head-title>공지사항</h1>
+    <h1 data-common-head-title class="scm-common-board-inner">공지사항</h1>
 
-    <div class="common-filter-body">
+    <div class="common-filter-body scm-common-board-inner">
         <div class="filter-board-total">
             <p>TOTAL</p>
             <p data-board-count>{{ copyOfData.length }}</p>
@@ -19,7 +19,7 @@
         
     </div>
 
-    <div id="scmTexts" class="ani_down">
+    <div id="scmTexts" class="ani_down scm-common-board-inner">
         <div class="scm-common-table">
             <div class="scm-table-header">
                 <ul class="scm-table-line bg-bid-blue" data-scm-table-header>
@@ -181,7 +181,7 @@
     }
     
     [data-common-head-title] {
-        margin: 3rem 0 1rem;
+        margin: 3rem auto 1rem auto;
     }
 
     .each-filter {

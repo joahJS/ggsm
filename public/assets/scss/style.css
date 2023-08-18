@@ -142,6 +142,13 @@
   min-width: 100rem;
 }
 
+.scm-common-board-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  min-width: 100rem;
+}
+
 .common-filter-body {
   display: flex;
   width: 100%;
@@ -488,4 +495,108 @@
 }
 .filter-board-total [data-board-count] {
   color: rgba(var(--deepblue), 1);
+}
+
+.ql-editor {
+  min-height: 50vh;
+}
+
+.wr-upload-container {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.wr-upload-container .wr-input-title {
+  width: 100%;
+}
+
+.wr-upload-body {
+  background-color: rgba(var(--main-black), 0.035);
+  padding: 0.75rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.wr-upload-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px dashed rgba(var(--main-black), 0.25);
+  background-color: rgba(var(--main-black), 0.045);
+  padding: 1.25rem 2rem;
+  border-radius: 0.5rem;
+}
+.wr-upload-location p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.wr-upload-location [data-drag-here-note] {
+  font-size: var(--fontM);
+  color: rgba(var(--deepblue), 1);
+}
+
+.wr-drag-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wr-drag-location p {
+  font-weight: 700;
+}
+.wr-drag-location svg {
+  color: rgba(var(--main-black), 0.25);
+  font-size: var(--fontMT);
+  margin-bottom: 1rem;
+}
+
+#wrUploadOrigin {
+  display: none;
+}
+
+.wr-upload-label {
+  cursor: pointer;
+  display: block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  background-color: rgba(var(--deepblue), 1);
+  color: rgb(var(--white));
+  font-size: var(--font13);
+}
+.wr-upload-label:hover {
+  opacity: 0.85;
+}
+.wr-upload-label svg {
+  margin-right: 0.25rem;
+  font-size: inherit;
+}
+
+.wr-up-list-location {
+  display: flex;
+  flex-direction: column;
+}
+.wr-up-list-location .up-list-title {
+  margin-bottom: 0.5rem;
+}
+
+.wr-uploaded-list {
+  display: flex;
+  flex-direction: column;
+}
+.wr-uploaded-list li {
+  padding: 0.25rem 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: var(--fontBase);
+}
+.wr-uploaded-list li svg {
+  color: rgba(var(--main-black), 0.25);
+}
+.wr-uploaded-list [data-file-size] {
+  display: inline-block;
+  margin-left: 0.25rem;
+  opacity: 0.4;
 }/*# sourceMappingURL=style.css.map */
