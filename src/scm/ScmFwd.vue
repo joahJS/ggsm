@@ -98,21 +98,6 @@
                 </ul>
             </div>
             <div class="scm-table-body">
-                <!-- <ul v-for="item in copyOfData" class="scm-table-line">
-                    <li><input type="checkbox" v-model="item.CHK"></li>
-                    <li>{{ item.CATE }}</li>
-                    <li>{{ item.WK_INFO }}</li>
-                    <li>{{ item.ST_GRADE }}</li>
-                    <li>{{ item.THICK }}</li>
-                    <li>{{ item.WIDTH }}</li>
-                    <li>{{ item.LENGTH }}</li>
-                    <li>{{ item.CUT }}</li>
-                    <li>{{ item.EQ_DIV }}</li>
-                    <li>{{ item.WK_DETAIL }}</li>
-                    <li>{{ item.REQ }}</li>
-                    <li>{{ item.DATE }}</li>
-                    <li>{{ item.IS_VIEW }}</li>
-                </ul> -->
                 <ul v-for="item in copyOfData" class="scm-table-line">
                     <li>{{ item.FWDDATE }}</li>
                     <li>{{ item.STNO }}</li>
@@ -132,7 +117,7 @@
             </div>
         </div>
     </div>
-    <button type="button" @click="chkView()">test button</button>
+    <!-- <button type="button" @click="chkView()">test button</button> -->
 
 </template>
 
@@ -208,6 +193,11 @@
                 border-right: 0;
             }
         }
+    }
+
+    .scm-table-header .scm-table-line li {
+        text-align: center;
+        color: rgba(var(--white), 1);
     }
 
     

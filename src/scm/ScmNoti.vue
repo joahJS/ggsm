@@ -1,23 +1,28 @@
 <template>
-    <h1 data-common-head-title>공지사항</h1>
+    <h1 data-common-head-title class="scm-common-board-inner">공지사항</h1>
 
-    <div class="common-filter-body">
+    <div class="common-filter-body scm-common-board-inner">
+        <div class="filter-board-total">
+            <p>TOTAL</p>
+            <p data-board-count>{{ copyOfData.length }}</p>
+        </div>
         <div class="each-filter">
-            <h2 class="ft-header">통합검색</h2>
-            <input type="text">
+            <!-- <h2 class="ft-header">통합검색</h2> -->
+            <input placeholder="검색어를 입력해주세요..." type="text">
+            <div class="filter-button-container">
+                <button class="common-filter-button" id="scmSearchBtn" type="button">
+                    <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                    <p>Search</p>
+                </button>
+            </div>
         </div>
-        <div class="filter-button-container">
-            <button class="common-filter-button" id="scmSearchBtn" type="button">
-                <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-                <p>Search</p>
-            </button>
-        </div>
+        
     </div>
 
-    <div id="scmTexts" class="ani_down">
+    <div id="scmTexts" class="ani_down scm-common-board-inner">
         <div class="scm-common-table">
             <div class="scm-table-header">
-                <ul class="scm-table-line" data-scm-table-header>
+                <ul class="scm-table-line bg-bid-blue" data-scm-table-header>
                     <li>작성일</li>
                     <li>제목</li>
                     <li>파일</li>
@@ -46,6 +51,14 @@
                 </router-link>
             </div>
         </div>
+        <div class="common-board-button-line">
+            <router-link :to="{ name: 'ScmNotiWr'}">
+                <button type="button" class="common-board-button">
+                    <font-awesome-icon icon="fa-pen" />
+                    글쓰기
+                </button>
+            </router-link>
+        </div>
         <!-- common pager -->
         <div class="scm-common-pager">
             <ul class="scm-pager-list">
@@ -60,7 +73,6 @@
 </template>
 
 <script setup>
-    import SubpHero from '@/components/SubpHero.vue';
 
     //store에서 영역별 데이터 import
     import { useScmNoticeStore } from '@/store/scmNoticeStore'
@@ -124,7 +136,7 @@
     #scmTexts .scm-table-line {
         grid-template-columns: 9rem 1fr 5rem;
         padding: 1.5rem 1.5rem;
-        // border-bottom: 1px solid rgba(var(--main-black), .15);
+        border-bottom: 1px solid rgba(var(--black) .1);
 
         &:hover {
             background-color: rgba(var(--main-black), .05);
@@ -164,6 +176,24 @@
         justify-content: flex-end;
         background-color: transparent;
         margin-bottom: 0.5rem;
+        padding: 1rem 0;
+        align-items: flex-end;
     }
     
+    [data-common-head-title] {
+        margin: 3rem auto 1rem auto;
+    }
+
+    .each-filter {
+        border-bottom: 1px solid rgba(var(--main-black), 1);
+
+        input[type=text] {
+            background-color: transparent;
+        }
+    }
+
+    .common-board-button {
+        background-color: rgba(var(--deepblue), 1);
+        color: rgb(var(--white));
+    }
 </style>
