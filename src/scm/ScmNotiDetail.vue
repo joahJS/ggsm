@@ -13,8 +13,21 @@
             
             <div class="board-texts-body">
                 <img :src="item.IMG_URL">
-                <div v-html="item.TEXTS" >
-                
+                <div v-html="item.TEXTS" >                
+                </div>
+                <div class="wr-upload-location">
+                    <div class="wr-up-list-location">
+                        <p class="up-list-title">Uploaded files list</p>
+
+                        <ul v-for="subItem in item.UPLOADED" class="wr-uploaded-list">
+                            <li>
+                                <router-link :to="subItem.FILE_URL">
+                                    <font-awesome-icon icon="fa-regular fa-file" />
+                                    <p>{{ subItem.FILE_NAME }}</p>
+                                </router-link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
@@ -62,5 +75,23 @@
     .common-board-button {
         background-color: rgb(var(--deepblue), 1);
         color: rgb(var(--white));
+    }
+
+    .wr-upload-location {
+        flex-direction: row;
+    }
+
+    .wr-uploaded-list {
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+                &:hover {
+                    font-weight: 700;
+                }
+            }
+        }
     }
 </style>

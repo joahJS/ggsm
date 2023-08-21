@@ -16,7 +16,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제01',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample01.jpg',
         },
         {
@@ -30,7 +36,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'N', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: null,
+                    FILE_URL: null,
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample02.jpg',
         },
         {
@@ -44,7 +56,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제02',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample01.jpg',
         },
         {
@@ -58,7 +76,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제03',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample02.jpg',
         },
         {
@@ -72,7 +96,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제04',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample01.jpg',
         },
         {
@@ -86,7 +116,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제05',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample02.jpg',
         },
         {
@@ -100,7 +136,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제06',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample01.jpg',
         },
         {
@@ -114,7 +156,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제07',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample02.jpg',
         },
         {
@@ -128,7 +176,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제08',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample01.jpg',
         },
         {
@@ -142,7 +196,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제09',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample02.jpg',
         },
         {
@@ -155,8 +215,14 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>두번째줄입니다.<p>
                 <p>세번째줄입니다.<p>
             `,
-            FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            FILE_YN: 'N', //파일
+            UPLOADED: [
+                {
+                    FILE_NAME: null,
+                    FILE_URL: null,
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample01.jpg',
         },
         {
@@ -170,7 +236,13 @@ export const useScmNoticeStore = defineStore('scmNotice', () => {
                 <p>세번째줄입니다.<p>
             `,
             FILE_YN: 'Y', //파일
-            FILE_URL: '/data/sample_download.txt',
+            UPLOADED: [
+                {
+                    FILE_NAME: '파일 예제10',
+                    FILE_URL: '/data/sample_download.txt',
+                }
+                
+            ],
             IMG_URL: '/img/notice_img/notice_sample02.jpg',
         },
         

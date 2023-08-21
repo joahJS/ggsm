@@ -51,6 +51,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
         //     IS_VIEW: 'false', //확인유무
         // },
         {
+            CATE: '원소재',
             FWDDATE: '2023-08-10',//출고일자
             STNO: '50000',//전표번호
             ITEM: '좋은품목',//품목
@@ -59,7 +60,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             MOP: '',//도금량
             SIZE: '30 * 30',//치수
             QUANTITY: '20000',//수량
-            WEIGHT: '가볍',//중량
+            WEIGHT: '85',//중량
             WARE: '',//창고
             PRODNO: 'TEST012345',//제품번호
             COILNO: 'COIL012345',//코일번호
@@ -67,6 +68,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             NOTE: '귀중',//비고
         },
         {
+            CATE: '보관품',
             FWDDATE: '2023-08-11',//출고일자
             STNO: '50001',//전표번호
             ITEM: '더좋은품목',//품목
@@ -75,7 +77,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             MOP: '',//도금량
             SIZE: '35 * 35',//치수
             QUANTITY: '2000',//수량
-            WEIGHT: '무겁',//중량
+            WEIGHT: '150',//중량
             WARE: '',//창고
             PRODNO: 'TEST067890',//제품번호
             COILNO: 'COIL067890',//코일번호
@@ -83,6 +85,7 @@ export const useScmFwdStore = defineStore('fwd', () => {
             NOTE: '무거움',//비고
         },
         {
+            CATE: '원소재',
             FWDDATE: '2023-08-12',//출고일자
             STNO: '50002',//전표번호
             ITEM: '매우좋은품목',//품목
@@ -91,13 +94,270 @@ export const useScmFwdStore = defineStore('fwd', () => {
             MOP: '',//도금량
             SIZE: '40 * 40',//치수
             QUANTITY: '1500',//수량
-            WEIGHT: '좀더무겁',//중량
+            WEIGHT: '350',//중량
             WARE: '',//창고
             PRODNO: 'TEST012346',//제품번호
             COILNO: 'COIL012346',//코일번호
             REQNO: '3234-5678-91011',//의뢰번호
             NOTE: '-',//비고
-        }
+        },
+        //
+        {
+            CATE: '제품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '보관품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '원소재',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '제품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '보관품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '원소재',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '원소재',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '제품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '보관품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '원소재',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '제품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '원소재',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '보관품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '원소재',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        {
+            CATE: '제품',
+            FWDDATE: '2023-08-12',//출고일자
+            STNO: '50002',//전표번호
+            ITEM: '매우좋은품목',//품목
+            STGRADE: '', //강종
+            MATERIAL: '',//재질
+            MOP: '',//도금량
+            SIZE: '40 * 40',//치수
+            QUANTITY: '1500',//수량
+            WEIGHT: '350',//중량
+            WARE: '',//창고
+            PRODNO: 'TEST012346',//제품번호
+            COILNO: 'COIL012346',//코일번호
+            REQNO: '3234-5678-91011',//의뢰번호
+            NOTE: '-',//비고
+        },
+        
     ])
 
     return { scmFwdGroup }

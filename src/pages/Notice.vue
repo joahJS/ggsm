@@ -4,7 +4,8 @@
         <h1 data-common-head-title>공지사항</h1>
         <div id="notiTexts" class="ani_down">
             <!-- item -->            
-            <div v-for="item in noticeGroup" data-notice-item @click="[isOpened = true, getNum(item.index)]">                
+            <!-- <div v-for="item in copyOfData" data-notice-item @click="[isOpened = true, getNum(item.index)]"> -->
+            <div v-for="item in copyOfData" data-notice-item @click="[isOpened = true, getThisMdData(item.index)]">
                 <div data-notice-item-dates>
                     <h2>{{ item.regMonth }}</h2>
                     <h2>{{ item.regDay }}</h2>
@@ -17,18 +18,37 @@
             <!-- item end -->
             
             <!-- 상세페이지 modal -->
-            <div data-notice-modal v-for="mdItem in noticeGroup[modalId]" v-if="isOpened">
-                <div data-notice-modal-texts>
+            <div data-notice-modal v-if="isOpened">
+                <div v-for="mdItem in isViewModal.value" data-notice-modal-texts>
                     <div data-notice-item-dates>
-                        <h2>{{ noticeGroup[modalId].regMonth }}</h2>
-                        <h2>{{ noticeGroup[modalId].regDay }}</h2>
-                        <p>{{ noticeGroup[modalId].year }}</p>
+                        <h3 class="notice-modal-title">{{ mdItem.title }}</h3>
+                        <div class="notice-modal-dates">
+                            <p>{{ mdItem.year }}.{{ mdItem.regMonth }}.{{ mdItem.regDay }}</p>
+                        </div>
+                        
                     </div>
                     <div data-notice-item-texts>
-                        <h3>{{ noticeGroup[modalId].title }}</h3>
-                        <img v-if="noticeGroup[modalId].img != ''" :src="noticeGroup[modalId].img" alt="">
-                        <p v-for="mdSubItem in noticeGroup[modalId].text">{{ mdSubItem.texts }}</p>
+                        
+                        <img v-if="mdItem.img != ''" :src="mdItem.img" alt="">
+                        <p v-for="mdSubItem in mdItem.text">{{ mdSubItem.texts }}</p>
                     </div>
+                    <!-- <ul class="notice-milestone-container">
+                        <li v-if="mdItem.index > 0" class="notice-milestone-item">
+                            <a href="#" @click="getPrevMdData(item.index)" v-for="item in copyOfData.filter((x) => x.index == i - 1)">
+                                <p>이전글</p>
+                                <p>{{ item.title }}</p>
+                                <p></p>
+                            </a>
+                        </li>
+                        <li v-else>
+                            <p>이전 글이 없습니다.</p>
+                        </li>
+                        <li class="notice-milestone-item">
+                            <p>다음글</p>
+                            <p></p>
+                            <p></p>
+                        </li>
+                    </ul> -->
                     <button @click="isOpened = !isOpened" class="common-button-style">
                         <font-awesome-icon icon="fa-regular fa-circle-xmark" />
                     </button>
@@ -53,13 +73,28 @@
     const noticeStore = useNoticeStore()
     const { noticeGroup } = storeToRefs(noticeStore)
 
-    let modalId = ref()
+    const copyOfData = reactive([...noticeGroup.value])
+    const isViewModal = reactive({})
+
+    let modalId = reactive({})
 
     function getNum(e) {
         modalId = e
         
     }
 
+    function getThisMdData(i) {
+        isViewModal.value = copyOfData.filter((x) => x.index == i);
+        console.log(isViewModal.value)
+    }
+
+    function getPrevMdData(i) {
+        isViewModal.value = copyOfData.filter((x) => x.index == i - 1);
+    }
+
+    function getNextMdData(i) {
+        isViewModal.value = copyOfData.filter((x) => x.index == i + 1);
+    }
 
     
 </script>
@@ -152,7 +187,7 @@
         cursor: auto;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(var(--black) .15);
+        background-color: rgba(var(--black) .65);
         z-index: 10;
 
         [data-notice-item-texts] {
@@ -182,7 +217,7 @@
         }
 
         [data-notice-item-dates] {
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
             border-bottom: 3px solid rgba(var(--main-clr), 1);
 
             p {
@@ -201,6 +236,16 @@
         
     }
 
+    .notice-modal-dates {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .notice-modal-title {
+        font-size: var(--fontST);
+        font-weight: 700;
+    }
+
     [data-notice-modal-texts] {
         @apply fixed;
 
@@ -208,14 +253,51 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(var(--white), 1);
-        padding: 2.5rem;
+        padding: 2rem;
         width: calc(100% - 1rem);
         min-width: 50vw;
         max-width: 60rem;
         height: 75vh;
         border-radius: 0.5rem;
-        
+
+        .notice-modal-dates {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin-top: 0;
+                color: rgba(var(--main-black), .5);
+                opacity: 1;
+                font-size: var(--fontBase);
+                font-weight: 400;
+            }
+        }
     }
+
+    // milestone
+    .notice-milestone-container {
+        position: absolute;
+        bottom: 6rem;
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid rgba(var(--black) 1);
+        border-bottom: 2px solid rgba(var(--black) 1);
+        width: calc(100% - 4rem);
+        gap: .5rem;
+
+        li {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            padding: .5rem;
+
+            &:first-child {
+                border-bottom: 1px solid rgba(var(--black) 1);
+            }
+        }
+
+    }
+
 
     //mediaquery
     @media (max-width: 1279px){
