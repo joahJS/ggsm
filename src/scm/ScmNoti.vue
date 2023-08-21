@@ -192,8 +192,4 @@
         }
     }
 
-    .common-board-button {
-        background-color: rgba(var(--deepblue), 1);
-        color: rgb(var(--white));
-    }
 </style>
