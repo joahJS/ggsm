@@ -64,10 +64,10 @@ export const usehfStore = defineStore('hdFt', () => {
     const ftGroup = ref([
         {
             ftLogo : '/CI_header_white.svg',
-            compname: '주식회사 금강에스엠',
-            address: '마법의성을지나늪을건너',
-            tel: '055.000,0000',
-            fax: '055.000.0001',
+            compname: '(주)금강에스엠',
+            address: '울산광역시 북구 송도길 60(효문동)',
+            tel: '052.289.5426',
+            fax: '052.289.5429',
             cpr: 'copyright ⓒ 2023 pineit all rights reserved.',
         }
     ])

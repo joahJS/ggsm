@@ -11,7 +11,7 @@
                 <font-awesome-icon icon="fa-solid fa-lock" />
                 <input type="text" id="loginPw" placeholder="Password">
             </div>
-            <router-link :to="{name: 'Scm', params: {category: 'scmNoti'}}" data-login-button-container>
+            <router-link :to="{name: 'Scm', params: {category: 'fwd'}}" data-login-button-container>
                 <button class="bg-bid-blue" data-login-button type="button">LOGIN</button>
             </router-link>
         </div>
@@ -35,7 +35,7 @@
 
 
     #loginBack {
-        position: relative;
+        position: fixed;
         width: 100vw;
         height: 100vh;
         

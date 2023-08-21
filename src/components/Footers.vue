@@ -1,5 +1,5 @@
 <template>
-    <footer v-if="useRoute().path !== '/'" v-for="item in ftGroup" :class="{'scm-min-width': useRoute().name == 'Scm'}">
+    <footer v-if="useRoute().path !== '/' && useRoute().path !== '/login'" v-for="item in ftGroup" :class="{'scm-min-width': useRoute().name == 'Scm'}">
         <div class="common-inner">
             <img data-ft-logo :src="item.ftLogo" alt="logo-footer">
             <section>
@@ -18,8 +18,7 @@
                 <article>
                     <p>{{ item.compname }}</p>
                     <p>{{ item.address }}</p>
-                    <p>TEL : {{ item.tel }}</p>
-                    <p>FAX : {{ item.fax }}</p>
+                    <p>TEL : {{ item.tel }} / FAX : {{ item.fax }}</p>
                 </article>
                 <p>{{ item.cpr }}</p>
             </section>
@@ -43,11 +42,12 @@
     footer {
         @apply w-full flex;
 
-        padding: 1.5rem 0 2rem;
+        padding: 1rem 0 1rem;
         // background-color: rgba(var(--black) .753);
         background-color: rgba(var(--main-black), .5);
         color: rgb(var(--white));
         font-weight: 100;
+        height: 13rem;
 
         > .common-inner {
             @apply flex w-full;
@@ -62,7 +62,7 @@
         section {
             @apply flex flex-col;
 
-            gap: 1.5rem;
+            gap: 1rem;
 
             p {
                 user-select: none;

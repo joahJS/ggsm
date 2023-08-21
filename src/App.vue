@@ -23,7 +23,8 @@
 
 <style scoped>
 #mainView {
-  padding-bottom: 10rem;
+  /* padding-bottom: 10rem; */
+  padding-bottom: 4.9rem;
   min-height: calc(100vh - 16.5rem);
 }
 

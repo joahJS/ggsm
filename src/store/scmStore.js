@@ -18,10 +18,10 @@ export const useScmStore = defineStore('scm', () => {
             category: 'reqReg',
         },
 
-        {
-            name: '공지사항',
-            category: 'scmNoti',
-        }
+        // {
+        //     name: '공지사항',
+        //     category: 'scmNoti',
+        // }
     ])
 
     const scmUsr = ref([

@@ -1,5 +1,5 @@
 <template>
-    <!-- <h1 data-common-head-title>출고관리</h1> -->
+    <!-- filter -->
     <div class="common-filter-body">
         <div class="common-filter-container">
             <div class="each-filter">
@@ -77,10 +77,11 @@
         
     </div>
 
+    <!-- 본문 -->
     <div id="scmTexts" class="ani_down scm-common-body">
         <div class="scm-common-table">
-            <div class="scm-table-header">
-                <ul class="scm-table-line scm-data-table-line bg-bid-blue" data-scm-table-header>
+            <div class="scm-table-header bg-bid-blue">
+                <ul class="scm-table-line scm-data-table-line" data-scm-table-header>
                     <li>출고일자</li>
                     <li>전표번호</li>
                     <li>품목</li>
@@ -115,6 +116,26 @@
                     <li>{{ item.NOTE }}</li>
                 </ul>
             </div>
+            <ul v-for="item in isViewList" class="scm-table-footer scm-table-line">
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 18L12.6796 12L5 6V4H19V6H8.26348L16 12L8.26348 18H19V20H5V18Z"></path></svg>
+                    <p class="scm-footer-titles">
+                        합계 <span>{{ isViewList.length }}</span>건
+                    </p>
+                    
+                </li>
+                <li>
+                    <p class="scm-footer-titles">
+                        <span>{{ totalQuantity }}</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="scm-footer-titles">
+                        <span>{{ totalWeight }}</span>
+                    </p>
+                </li>
+                <li></li>
+            </ul>
         </div>
     </div>
     <!-- <button type="button" @click="chkView()">test button</button> -->
@@ -134,10 +155,14 @@
     const inputValue = ref(new Date())
     const hdCheck = ref([])
 
+    //조회된 리스트 배열 여기 담기(copyOfData에서 필터링을 거친 후 여기 담기 / 지금은 임시)
+    const isViewList = ref([...copyOfData])
+
     function chkView() {
         console.log()
     }
 
+    //달력 관련
     const range = ref({
         start: new Date(),
         end: new Date(),
@@ -149,6 +174,7 @@
         console.log(range.value)
     }
 
+    //전체 체크
     watch(hdCheck, () => {
 
         for(let i = 0; copyOfData.length > i; i++ ) {
@@ -162,6 +188,18 @@
          
     })
 
+    //수량 합계
+    const totalQuantity = isViewList.value.reduce((x, y) => {
+        return parseInt(x) + parseInt(y.QUANTITY);
+    }, 0);
+
+    //중량 합계
+    const totalWeight = isViewList.value.reduce((x, y) => {
+        return parseInt(x) + parseInt(y.WEIGHT);
+    }, 0);
+
+    console.log(totalQuantity)
+
     
 </script>
 
@@ -170,36 +208,45 @@
         grid-template-columns: repeat(3, minmax(3rem, 1fr));
     }
 
-    .each-filter {
-
+    .scm-common-table {
+        // height: 50vh;
+        
     }
 
     // table
 
     .scm-table-line {
-        grid-template-columns: minmax(7.5rem, 1fr) repeat(2, 1fr) .75fR 1.25fr 1fr .75fr .75fr 1fr 1fr 1fr 1fr minmax(11rem, 1.5fr) 2fr;
-        padding: .75rem 0;
+        grid-template-columns: minmax(7.5rem, 1fr) 1fr 1.25fr .75fR 1fr 1fr .75fr .75fr 1fr 1fr 1fr 1fr minmax(11rem, 1.5fr) 2fr;
+    }
 
-        li {
-            border-right: 1px solid rgba(var(--main-black), .1);
-            padding: 0 1rem;
-            text-align: left;
-
-            &:nth-child(3) {
-                
-            }
-
-            &:last-child {
-                border-right: 0;
-            }
+    .scm-table-header {
+        padding-right: 1rem;
+        .scm-table-line li {
+            text-align: center;
+            color: rgba(var(--white), 1);
         }
     }
+    
+    .scm-table-footer {
+        li:nth-child(1) {
+            grid-column: 1/8;
+        }
+    
+        li:nth-child(2) {
+            background-color: rgba(var(--main-black), .025);
+            padding: .75rem .75rem .75rem 1.25rem !important;
+        }
 
-    .scm-table-header .scm-table-line li {
-        text-align: center;
-        color: rgba(var(--white), 1);
+        li:nth-child(3) {
+            background-color: rgba(var(--main-black), .025);
+            padding: .75rem .75rem .75rem 1rem !important;
+        }
+
+        li:nth-child(4) {
+            grid-column: 10/15;
+            border-right: none !important;
+        }
     }
-
     
 
     // @media (max-width: 1919px) {

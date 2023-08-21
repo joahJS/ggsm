@@ -30,9 +30,10 @@
 :root {
     font-family: 'NS-Neo';
     font-size: 16px;
-    
+}
 
-
+#wrap {
+    min-height: calc(100vh - 13rem);
 }
 
 // #wrap {
@@ -48,7 +49,20 @@
 /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
 ::-webkit-scrollbar {
     background-color: transparent;
-    display: none;
+    width: 1rem;
+    filter: drop-shadow(-4px 0 8px rgba(var(--deepblue), .15));
+    position: absolute;
+    
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--deepblue), .15);
+    border-radius: .5rem;
+
 }
 
 
