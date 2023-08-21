@@ -591,6 +591,7 @@
   gap: 0.5rem;
   align-items: center;
   font-size: var(--fontBase);
+  cursor: pointer;
 }
 .wr-uploaded-list li svg {
   color: rgba(var(--main-black), 0.25);
@@ -599,4 +600,9 @@
   display: inline-block;
   margin-left: 0.25rem;
   opacity: 0.4;
+}
+
+.common-board-button {
+  background-color: rgba(var(--deepblue), 1);
+  color: rgb(var(--white));
 }/*# sourceMappingURL=style.css.map */

@@ -34,17 +34,27 @@
                         </div>
                         <div class="wr-up-list-location">
                             <p class="up-list-title">Uploaded files list</p>
-                            <ul v-for="item in recentFileList" class="wr-uploaded-list">
-                                <li>
+
+                            <ul v-for="(item, i) in recentFileList" class="wr-uploaded-list">
+                                <li @click="recentFileList.splice(i, 1)">
                                     <font-awesome-icon icon="fa-regular fa-file" />
-                                    <p>{{ item.name }}<span data-file-size>({{ Math.floor(item.size / 1024) }}kb)</span></p>
-                                    <font-awesome-icon @click="isDelete" icon="trash-can" />
+                                    <p>{{ item.name }}<span data-file-size>({{ Math.floor(item.size / 1024) }}kb) {{ i }}</span></p>
+                                    <font-awesome-icon icon="trash-can" />
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                     
                 </div>
+            </div>
+            <div class="common-board-button-line">
+                <router-link :to="{ name: 'Scm', params: {category: 'scmNoti'}}">
+                    <button type="button" class="common-board-button">
+                        <font-awesome-icon icon="fa-pen" />
+                        작성
+                    </button>
+                </router-link>
             </div>
         </div>
         
@@ -58,6 +68,7 @@
 
     import { useRoute } from 'vue-router'
 
+    //드래그로 업로드하는 파일 정보 가져오기
     let recentFile = {}
     const recentFileList = reactive([])
         
@@ -72,11 +83,12 @@
             Object.assign(recentFileList, datas.value[i])
 
             recentFileList.push({...recentFile})
-            
         }
-        console.log(recentFileList)
-    }
 
+    }
+    //
+
+    //input type="file"로 업로드 파일 정보 가져오기
     const inputToUpload = (e) => {
         const inputDatas = ref(e.currentTarget.files)
 
@@ -86,31 +98,38 @@
             recentFile.name = inputDatas.value[i].name;
             recentFile.size = inputDatas.value[i].size;
 
-            console.log(inputDatas.value[i].name)
-
             Object.assign(recentFileList, inputDatas.value[i])
 
             recentFileList.push({...recentFile})
         }
-
-        inputDatas.value = null
     }
+    //
 
-    const isDelete = (e) => {
-        const thisItem = e.currentTarget.parentNode
-        const nowList = e.currentTarget.parentNode.parentNode
 
-        console.log(nowList)
-        console.log(thisItem)        
-      
-    }
 
 
 
 
     //Quill editor 옵션(바인드 되어있음)
     const editorOption = ref({
-        placeholder: '본문을 작성해주세요.'
+        placeholder: '본문을 작성해주세요.',
+        modules: {
+            toolbar: [
+                ["bold", "italic", "underline", "strike"], // <strong>, <em>, <u>, <s>
+                ["blockquote", "code-block"], // <blockquote>, <pre class="ql-syntax" spellcheck="false">
+                [{ header: 1 }, { header: 2 }], // <h1>, <h2>
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ script: "sub" }, { script: "super" }], // <sub>, <sup>
+                [{ indent: "-1" }, { indent: "+1" }], // class제어
+                [{ direction: "rtl" }], //class 제어
+                [{ size: ["small", false, "large", "huge"] }], //class 제어 - html로 되도록 확인
+                [{ header: [1, 2, 3, 4, 5, 6, false] }], // <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, normal
+                [{ font: [] }], // 글꼴 class로 제어
+                [{ color: [] }, { background: [] }], //style="color: rgb(230, 0, 0);", style="background-color: rgb(230, 0, 0);"
+                [{ align: [] }], // class
+                ["link", "image", "video"],
+            ]
+        }
     }) 
 
 
