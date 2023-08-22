@@ -8,7 +8,7 @@ export const useNoticeStore = defineStore('notice', () => {
     const noticeGroup = ref([
         {
             index: 0,
-            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            title: '01. Lorem ipsum dolor sit amet consectetur adipisicing elit',
             regMonth: '10',
             regDay: '11',
             year: '2022',
@@ -22,7 +22,7 @@ export const useNoticeStore = defineStore('notice', () => {
         },
         {
             index: 1,
-            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            title: '02. Lorem ipsum dolor sit amet consectetur adipisicing elit',
             regMonth: '12',
             regDay: '25',
             year: '2022',
@@ -36,7 +36,7 @@ export const useNoticeStore = defineStore('notice', () => {
         },
         {
             index: 2,
-            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            title: '03. Lorem ipsum dolor sit amet consectetur adipisicing elit',
             regMonth: '01',
             regDay: '01',
             year: '2023',
@@ -50,7 +50,7 @@ export const useNoticeStore = defineStore('notice', () => {
         },
         {
             index: 3,
-            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+            title: '04. Lorem ipsum dolor sit amet consectetur adipisicing elit',
             regMonth: '04',
             regDay: '01',
             year: '2023',

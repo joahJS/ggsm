@@ -32,23 +32,30 @@
                         <img v-if="mdItem.img != ''" :src="mdItem.img" alt="">
                         <p v-for="mdSubItem in mdItem.text">{{ mdSubItem.texts }}</p>
                     </div>
-                    <!-- <ul class="notice-milestone-container">
+                    <ul class="notice-milestone-container">
                         <li v-if="mdItem.index > 0" class="notice-milestone-item">
-                            <a href="#" @click="getPrevMdData(item.index)" v-for="item in copyOfData.filter((x) => x.index == i - 1)">
+                            <!-- <a href="#" @click="getPrevMdData(item.index)" v-for="subItem in copyOfData.find((x) => x.index === mdItem.index - 1)"> -->
+                            <a href="#" @click="getPrevMdData(mdItem.index)" v-for="subItem in copyOfData.filter((x) => x.index === mdItem.index - 1)">
                                 <p>이전글</p>
-                                <p>{{ item.title }}</p>
-                                <p></p>
+                                <p class="notice-milestone-title">{{ subItem.title }}</p>
+                                <p class="notice-milestone-date">{{ subItem.year }}.{{ subItem.regMonth }}.{{ subItem.regDay }}</p>
                             </a>
                         </li>
-                        <li v-else>
+                        <li v-else class="notice-milestone-item">
                             <p>이전 글이 없습니다.</p>
                         </li>
-                        <li class="notice-milestone-item">
-                            <p>다음글</p>
-                            <p></p>
-                            <p></p>
+                        <li v-if="mdItem.index < copyOfData.length" class="notice-milestone-item">
+                            <a href="#" @click="getNextMdData(mdItem.index)" v-for="subItem in copyOfData.filter((x) => x.index === mdItem.index + 1)">
+                                <p>다음글</p>
+                                <p class="notice-milestone-title">{{ subItem.title }}{{ copyOfData.length }}</p>
+                                <p class="notice-milestone-date">{{ subItem.year }}.{{ subItem.regMonth }}.{{ subItem.regDay }}</p>
+                            </a>
                         </li>
-                    </ul> -->
+                        <li v-else class="notice-milestone-item">
+                            <p>다음 글이 없습니다.</p>
+                        </li>
+                        
+                    </ul>
                     <button @click="isOpened = !isOpened" class="common-button-style">
                         <font-awesome-icon icon="fa-regular fa-circle-xmark" />
                     </button>
@@ -291,11 +298,35 @@
             height: 3rem;
             padding: .5rem;
 
+            a {
+                display: flex;
+                gap: 1rem;
+                width: 100%;
+            }
+
             &:first-child {
                 border-bottom: 1px solid rgba(var(--black) 1);
             }
         }
 
+    }
+
+    .notice-milestone-date {
+        margin-left: auto;
+    }
+
+    .notice-milestone-title {
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 1rem;
+            background-color: rgba(var(--black) 1);
+            margin-right: 1rem;
+        }
     }
 
 
